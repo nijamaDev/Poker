@@ -73,6 +73,11 @@ public class Poker extends javax.swing.JFrame {
         start_nuevaBut.setBounds(574, 500, 122, 32);
 
         start_reglasBut.setText("REGLAS");
+        start_reglasBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                start_reglasButActionPerformed(evt);
+            }
+        });
         startLayer.setLayer(start_reglasBut, javax.swing.JLayeredPane.MODAL_LAYER);
         startLayer.add(start_reglasBut);
         start_reglasBut.setBounds(597, 550, 76, 32);
@@ -110,6 +115,11 @@ public class Poker extends javax.swing.JFrame {
 
         end_aceptarBut.setText("ACEPTAR");
         end_aceptarBut.setPreferredSize(new java.awt.Dimension(90, 32));
+        end_aceptarBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                end_aceptarButActionPerformed(evt);
+            }
+        });
         endLayer.setLayer(end_aceptarBut, javax.swing.JLayeredPane.MODAL_LAYER);
         endLayer.add(end_aceptarBut);
         end_aceptarBut.setBounds(590, 500, 90, 32);
@@ -146,6 +156,14 @@ public class Poker extends javax.swing.JFrame {
     private void start_nuevaButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_start_nuevaButActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_start_nuevaButActionPerformed
+
+    private void end_aceptarButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_end_aceptarButActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_end_aceptarButActionPerformed
+
+    private void start_reglasButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_start_reglasButActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_start_reglasButActionPerformed
   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLayeredPane endLayer;
