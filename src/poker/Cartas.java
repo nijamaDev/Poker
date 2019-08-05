@@ -13,7 +13,7 @@ import javax.swing.JLabel;
  *
  * @author crhistian
  */
-public class Cartas {
+public class Cartas extends JLabel{
     /**Cara trasera de la carta*/
     public static ImageIcon back;
     /**Cara delantera de la carta*/
