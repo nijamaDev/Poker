@@ -35,6 +35,8 @@ public class Poker extends javax.swing.JFrame {
         start_reglasBut = new javax.swing.JButton();
         start_salirBut = new javax.swing.JButton();
         gameLayer = new javax.swing.JLayeredPane();
+        game_gbLabel = new javax.swing.JLabel();
+        game_tableLabel = new javax.swing.JLabel();
         endLayer = new javax.swing.JLayeredPane();
         end_bgLabel = new javax.swing.JLabel();
         end_gameOverLabel = new javax.swing.JLabel();
@@ -97,12 +99,23 @@ public class Poker extends javax.swing.JFrame {
         startLayer.setBounds(0, 0, 1270, 700);
 
         gameLayer.setPreferredSize(new java.awt.Dimension(1270, 700));
+
+        game_gbLabel.setOpaque(true);
+        game_gbLabel.setPreferredSize(new java.awt.Dimension(1270, 700));
+        gameLayer.add(game_gbLabel);
+        game_gbLabel.setBounds(0, 0, 1270, 700);
+
+        game_tableLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/table.png"))); // NOI18N
+        gameLayer.setLayer(game_tableLabel, javax.swing.JLayeredPane.MODAL_LAYER);
+        gameLayer.add(game_tableLabel);
+        game_tableLabel.setBounds(311, 90, 647, 327);
+
         mainPane.add(gameLayer);
         gameLayer.setBounds(0, 0, 1270, 700);
 
         endLayer.setPreferredSize(new java.awt.Dimension(1270, 700));
 
-        end_bgLabel.setBackground(new java.awt.Color(244, 244, 244));
+        end_bgLabel.setBackground(new java.awt.Color(0, 0, 0));
         end_bgLabel.setOpaque(true);
         end_bgLabel.setPreferredSize(new java.awt.Dimension(1270, 700));
         endLayer.add(end_bgLabel);
@@ -172,6 +185,8 @@ public class Poker extends javax.swing.JFrame {
     private javax.swing.JLabel end_gameOverLabel;
     private javax.swing.JButton end_salirBut;
     private javax.swing.JLayeredPane gameLayer;
+    private javax.swing.JLabel game_gbLabel;
+    private javax.swing.JLabel game_tableLabel;
     private javax.swing.JLayeredPane mainPane;
     private javax.swing.JLayeredPane startLayer;
     private javax.swing.JLabel start_bgLabel;

@@ -3,11 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/home/crhistian/Desktop/gitPoker1/Poker/src/poker/Control.java</file>
             <file>file:/home/crhistian/Desktop/gitPoker1/Poker/src/poker/Cartas.java</file>
             <file>file:/home/crhistian/Desktop/gitPoker1/Poker/src/poker/Main.java</file>
             <file>file:/home/crhistian/Desktop/gitPoker1/Poker/src/poker/Poker.java</file>
             <file>file:/home/crhistian/Desktop/gitPoker1/Poker/src/poker/Jugador.java</file>
+=======
+            <file>file:/E:/Mega/ZNK/Proyects/NetBeansProjects/Poker/src/poker/Main.java</file>
+>>>>>>> 9521c8016af0daa77edf0a5b0f569eae55dbebe1
         </group>
     </open-files>
 </project-private>
