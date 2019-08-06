@@ -14,15 +14,19 @@ import javax.swing.JLabel;
  * @author crhistian
  */
 public class Cartas extends JLabel{
+	
     /**Cara trasera de la carta*/
     public static ImageIcon back;
     /**Cara delantera de la carta*/
     private ImageIcon front;
     
     public Cartas(ImageIcon image){
-    	this.back = back;
     	this.front = image;
     	setIcon(back);
     	
     }
+    
+    public void flipOverCarta() {
+		setIcon(front);
+	}
 }
