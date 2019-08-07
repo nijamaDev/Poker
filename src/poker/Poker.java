@@ -124,7 +124,7 @@ public class Poker extends javax.swing.JFrame {
         end_gameOverLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/gameOver.png"))); // NOI18N
         endLayer.setLayer(end_gameOverLabel, javax.swing.JLayeredPane.POPUP_LAYER);
         endLayer.add(end_gameOverLabel);
-        end_gameOverLabel.setBounds(356, 150, 590, 160);
+        end_gameOverLabel.setBounds(361, 150, 547, 122);
 
         end_aceptarBut.setText("ACEPTAR");
         end_aceptarBut.setPreferredSize(new java.awt.Dimension(90, 32));
