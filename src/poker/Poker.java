@@ -5,6 +5,9 @@
  */
 package poker;
 
+import externalCode.RotatedIcon;
+import externalCode.RotatedIcon.Rotate;
+
 /**
  *
  * @author ZNK5
@@ -37,6 +40,18 @@ public class Poker extends javax.swing.JFrame {
         gameLayer = new javax.swing.JLayeredPane();
         game_gbLabel = new javax.swing.JLabel();
         game_tableLabel = new javax.swing.JLabel();
+        game_chair1Label = new javax.swing.JLabel();
+        game_p1Pane = new javax.swing.JLayeredPane();
+        game_chair2Label = new javax.swing.JLabel();
+        game_p2Pane = new javax.swing.JLayeredPane();
+        game_chair3Label = new javax.swing.JLabel();
+        game_p3Pane = new javax.swing.JLayeredPane();
+        game_chair4Label = new javax.swing.JLabel();
+        game_p4Pane = new javax.swing.JLayeredPane();
+        game_chair5Label = new javax.swing.JLabel();
+        game_p5Pane = new javax.swing.JLayeredPane();
+        game_chair6Label = new javax.swing.JLabel();
+        game_p6Pane = new javax.swing.JLayeredPane();
         endLayer = new javax.swing.JLayeredPane();
         end_bgLabel = new javax.swing.JLabel();
         end_gameOverLabel = new javax.swing.JLabel();
@@ -108,8 +123,74 @@ public class Poker extends javax.swing.JFrame {
         game_tableLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/table.png"))); // NOI18N
         gameLayer.setLayer(game_tableLabel, javax.swing.JLayeredPane.MODAL_LAYER);
         gameLayer.add(game_tableLabel);
-        game_tableLabel.setBounds(311, 90, 647, 327);
+        game_tableLabel.setBounds(311, 100, 647, 327);
 
+        game_chair1Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/chair.png"))); // NOI18N
+        gameLayer.setLayer(game_chair1Label, javax.swing.JLayeredPane.PALETTE_LAYER);
+        gameLayer.add(game_chair1Label);
+        game_chair1Label.setBounds(560, 0, 150, 150);
+
+        game_p1Pane.setPreferredSize(new java.awt.Dimension(120, 90));
+        gameLayer.setLayer(game_p1Pane, javax.swing.JLayeredPane.POPUP_LAYER);
+        gameLayer.add(game_p1Pane);
+        game_p1Pane.setBounds(575, 120, 120, 90);
+
+        game_chair2Label.setIcon(new RotatedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/chair.png")), Rotate.UPSIDE_DOWN));
+        game_chair2Label.setPreferredSize(new java.awt.Dimension(150, 150));
+        gameLayer.setLayer(game_chair2Label, javax.swing.JLayeredPane.PALETTE_LAYER);
+        gameLayer.add(game_chair2Label);
+        game_chair2Label.setBounds(560, 380, 150, 150);
+
+        game_p2Pane.setPreferredSize(new java.awt.Dimension(120, 90));
+        gameLayer.setLayer(game_p2Pane, javax.swing.JLayeredPane.POPUP_LAYER);
+        gameLayer.add(game_p2Pane);
+        game_p2Pane.setBounds(575, 325, 120, 90);
+
+        game_chair3Label.setIcon(new RotatedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/chair.png")), (double) 135));
+        game_chair3Label.setPreferredSize(new java.awt.Dimension(150, 150));
+        gameLayer.setLayer(game_chair3Label, javax.swing.JLayeredPane.PALETTE_LAYER);
+        gameLayer.add(game_chair3Label);
+        game_chair3Label.setBounds(820, 320, 150, 150);
+
+        game_p3Pane.setPreferredSize(new java.awt.Dimension(120, 90));
+        gameLayer.setLayer(game_p3Pane, javax.swing.JLayeredPane.POPUP_LAYER);
+        gameLayer.add(game_p3Pane);
+        game_p3Pane.setBounds(817, 300, 120, 90);
+
+        game_chair4Label.setIcon(new RotatedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/chair.png")), (double) -45));
+        game_chair4Label.setPreferredSize(new java.awt.Dimension(150, 150));
+        gameLayer.setLayer(game_chair4Label, javax.swing.JLayeredPane.PALETTE_LAYER);
+        gameLayer.add(game_chair4Label);
+        game_chair4Label.setBounds(240, 80, 150, 150);
+
+        game_p4Pane.setPreferredSize(new java.awt.Dimension(120, 90));
+        gameLayer.setLayer(game_p4Pane, javax.swing.JLayeredPane.POPUP_LAYER);
+        gameLayer.add(game_p4Pane);
+        game_p4Pane.setBounds(333, 140, 120, 90);
+
+        game_chair5Label.setIcon(new RotatedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/chair.png")), (double) -135));
+        game_chair5Label.setPreferredSize(new java.awt.Dimension(150, 150));
+        gameLayer.setLayer(game_chair5Label, javax.swing.JLayeredPane.PALETTE_LAYER);
+        gameLayer.add(game_chair5Label);
+        game_chair5Label.setBounds(260, 320, 150, 150);
+
+        game_p5Pane.setPreferredSize(new java.awt.Dimension(120, 90));
+        gameLayer.setLayer(game_p5Pane, javax.swing.JLayeredPane.POPUP_LAYER);
+        gameLayer.add(game_p5Pane);
+        game_p5Pane.setBounds(333, 300, 120, 90);
+
+        game_chair6Label.setIcon(new RotatedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/chair.png")), (double) 45));
+        game_chair6Label.setPreferredSize(new java.awt.Dimension(150, 150));
+        gameLayer.setLayer(game_chair6Label, javax.swing.JLayeredPane.PALETTE_LAYER);
+        gameLayer.add(game_chair6Label);
+        game_chair6Label.setBounds(820, 80, 150, 150);
+
+        game_p6Pane.setPreferredSize(new java.awt.Dimension(120, 90));
+        gameLayer.setLayer(game_p6Pane, javax.swing.JLayeredPane.POPUP_LAYER);
+        gameLayer.add(game_p6Pane);
+        game_p6Pane.setBounds(817, 140, 120, 90);
+
+        mainPane.setLayer(gameLayer, javax.swing.JLayeredPane.POPUP_LAYER);
         mainPane.add(gameLayer);
         gameLayer.setBounds(0, 0, 1270, 700);
 
@@ -185,7 +266,19 @@ public class Poker extends javax.swing.JFrame {
     private javax.swing.JLabel end_gameOverLabel;
     private javax.swing.JButton end_salirBut;
     private javax.swing.JLayeredPane gameLayer;
+    private javax.swing.JLabel game_chair1Label;
+    private javax.swing.JLabel game_chair2Label;
+    private javax.swing.JLabel game_chair3Label;
+    private javax.swing.JLabel game_chair4Label;
+    private javax.swing.JLabel game_chair5Label;
+    private javax.swing.JLabel game_chair6Label;
     private javax.swing.JLabel game_gbLabel;
+    private javax.swing.JLayeredPane game_p1Pane;
+    private javax.swing.JLayeredPane game_p2Pane;
+    private javax.swing.JLayeredPane game_p3Pane;
+    private javax.swing.JLayeredPane game_p4Pane;
+    private javax.swing.JLayeredPane game_p5Pane;
+    private javax.swing.JLayeredPane game_p6Pane;
     private javax.swing.JLabel game_tableLabel;
     private javax.swing.JLayeredPane mainPane;
     private javax.swing.JLayeredPane startLayer;
