@@ -52,6 +52,11 @@ public class Poker extends javax.swing.JFrame {
         game_p5Pane = new javax.swing.JLayeredPane();
         game_chair6Label = new javax.swing.JLabel();
         game_p6Pane = new javax.swing.JLayeredPane();
+        game_dineroLabel = new javax.swing.JLabel();
+        game_apuestaLabel = new javax.swing.JLabel();
+        game_apostarBut = new javax.swing.JButton();
+        game_apuestaText = new javax.swing.JTextField();
+        game_pasarBut = new javax.swing.JButton();
         endLayer = new javax.swing.JLayeredPane();
         end_bgLabel = new javax.swing.JLabel();
         end_gameOverLabel = new javax.swing.JLabel();
@@ -87,7 +92,7 @@ public class Poker extends javax.swing.JFrame {
         });
         startLayer.setLayer(start_nuevaBut, javax.swing.JLayeredPane.MODAL_LAYER);
         startLayer.add(start_nuevaBut);
-        start_nuevaBut.setBounds(574, 500, 122, 32);
+        start_nuevaBut.setBounds(574, 500, 138, 31);
 
         start_reglasBut.setText("REGLAS");
         start_reglasBut.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +102,7 @@ public class Poker extends javax.swing.JFrame {
         });
         startLayer.setLayer(start_reglasBut, javax.swing.JLayeredPane.MODAL_LAYER);
         startLayer.add(start_reglasBut);
-        start_reglasBut.setBounds(597, 550, 76, 32);
+        start_reglasBut.setBounds(597, 550, 83, 31);
 
         start_salirBut.setText("SALIR");
         start_salirBut.addActionListener(new java.awt.event.ActionListener() {
@@ -107,7 +112,7 @@ public class Poker extends javax.swing.JFrame {
         });
         startLayer.setLayer(start_salirBut, javax.swing.JLayeredPane.MODAL_LAYER);
         startLayer.add(start_salirBut);
-        start_salirBut.setBounds(603, 600, 64, 32);
+        start_salirBut.setBounds(603, 600, 69, 31);
 
         mainPane.setLayer(startLayer, javax.swing.JLayeredPane.MODAL_LAYER);
         mainPane.add(startLayer);
@@ -115,6 +120,9 @@ public class Poker extends javax.swing.JFrame {
 
         gameLayer.setPreferredSize(new java.awt.Dimension(1270, 700));
 
+        game_gbLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/bg.jpg"))); // NOI18N
+        game_gbLabel.setMaximumSize(new java.awt.Dimension(1270, 700));
+        game_gbLabel.setMinimumSize(new java.awt.Dimension(1270, 700));
         game_gbLabel.setOpaque(true);
         game_gbLabel.setPreferredSize(new java.awt.Dimension(1270, 700));
         gameLayer.add(game_gbLabel);
@@ -190,6 +198,48 @@ public class Poker extends javax.swing.JFrame {
         gameLayer.add(game_p6Pane);
         game_p6Pane.setBounds(817, 140, 120, 90);
 
+        game_dineroLabel.setFont(new java.awt.Font("Fira Sans", 0, 36)); // NOI18N
+        game_dineroLabel.setText("  DINERO:");
+        game_dineroLabel.setToolTipText("");
+        game_dineroLabel.setOpaque(true);
+        gameLayer.setLayer(game_dineroLabel, javax.swing.JLayeredPane.MODAL_LAYER);
+        gameLayer.add(game_dineroLabel);
+        game_dineroLabel.setBounds(50, 500, 300, 100);
+
+        game_apuestaLabel.setFont(new java.awt.Font("Fira Sans", 0, 36)); // NOI18N
+        game_apuestaLabel.setText("APUESTA:");
+        game_apuestaLabel.setToolTipText("");
+        game_apuestaLabel.setOpaque(true);
+        gameLayer.setLayer(game_apuestaLabel, javax.swing.JLayeredPane.MODAL_LAYER);
+        gameLayer.add(game_apuestaLabel);
+        game_apuestaLabel.setBounds(920, 500, 300, 100);
+
+        game_apostarBut.setText("APOSTAR");
+        game_apostarBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                game_apostarButActionPerformed(evt);
+            }
+        });
+        gameLayer.setLayer(game_apostarBut, javax.swing.JLayeredPane.MODAL_LAYER);
+        gameLayer.add(game_apostarBut);
+        game_apostarBut.setBounds(100, 620, 100, 31);
+
+        game_apuestaText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        game_apuestaText.setText("0");
+        gameLayer.setLayer(game_apuestaText, javax.swing.JLayeredPane.POPUP_LAYER);
+        gameLayer.add(game_apuestaText);
+        game_apuestaText.setBounds(200, 620, 90, 30);
+
+        game_pasarBut.setText("PASAR TURNO");
+        game_pasarBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                game_pasarButActionPerformed(evt);
+            }
+        });
+        gameLayer.setLayer(game_pasarBut, javax.swing.JLayeredPane.MODAL_LAYER);
+        gameLayer.add(game_pasarBut);
+        game_pasarBut.setBounds(1000, 620, 126, 31);
+
         mainPane.setLayer(gameLayer, javax.swing.JLayeredPane.POPUP_LAYER);
         mainPane.add(gameLayer);
         gameLayer.setBounds(0, 0, 1270, 700);
@@ -216,7 +266,7 @@ public class Poker extends javax.swing.JFrame {
         });
         endLayer.setLayer(end_aceptarBut, javax.swing.JLayeredPane.MODAL_LAYER);
         endLayer.add(end_aceptarBut);
-        end_aceptarBut.setBounds(590, 500, 90, 32);
+        end_aceptarBut.setBounds(590, 500, 100, 32);
 
         end_salirBut.setText("SALIR");
         end_salirBut.addActionListener(new java.awt.event.ActionListener() {
@@ -226,7 +276,7 @@ public class Poker extends javax.swing.JFrame {
         });
         endLayer.setLayer(end_salirBut, javax.swing.JLayeredPane.MODAL_LAYER);
         endLayer.add(end_salirBut);
-        end_salirBut.setBounds(603, 550, 64, 32);
+        end_salirBut.setBounds(603, 550, 69, 31);
 
         mainPane.setLayer(endLayer, javax.swing.JLayeredPane.POPUP_LAYER);
         mainPane.add(endLayer);
@@ -258,6 +308,14 @@ public class Poker extends javax.swing.JFrame {
     private void start_reglasButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_start_reglasButActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_start_reglasButActionPerformed
+
+    private void game_apostarButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_game_apostarButActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_game_apostarButActionPerformed
+
+    private void game_pasarButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_game_pasarButActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_game_pasarButActionPerformed
   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLayeredPane endLayer;
@@ -266,12 +324,16 @@ public class Poker extends javax.swing.JFrame {
     private javax.swing.JLabel end_gameOverLabel;
     private javax.swing.JButton end_salirBut;
     private javax.swing.JLayeredPane gameLayer;
+    private javax.swing.JButton game_apostarBut;
+    private javax.swing.JLabel game_apuestaLabel;
+    private javax.swing.JTextField game_apuestaText;
     private javax.swing.JLabel game_chair1Label;
     private javax.swing.JLabel game_chair2Label;
     private javax.swing.JLabel game_chair3Label;
     private javax.swing.JLabel game_chair4Label;
     private javax.swing.JLabel game_chair5Label;
     private javax.swing.JLabel game_chair6Label;
+    private javax.swing.JLabel game_dineroLabel;
     private javax.swing.JLabel game_gbLabel;
     private javax.swing.JLayeredPane game_p1Pane;
     private javax.swing.JLayeredPane game_p2Pane;
@@ -279,6 +341,7 @@ public class Poker extends javax.swing.JFrame {
     private javax.swing.JLayeredPane game_p4Pane;
     private javax.swing.JLayeredPane game_p5Pane;
     private javax.swing.JLayeredPane game_p6Pane;
+    private javax.swing.JButton game_pasarBut;
     private javax.swing.JLabel game_tableLabel;
     private javax.swing.JLayeredPane mainPane;
     private javax.swing.JLayeredPane startLayer;
