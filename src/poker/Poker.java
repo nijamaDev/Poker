@@ -21,6 +21,11 @@ import javax.swing.WindowConstants;
 
 import externalCode.RotatedIcon;
 import externalCode.RotatedIcon.Rotate;
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
+import java.net.URL;
 
 /**
  *
@@ -317,7 +322,19 @@ public class Poker extends javax.swing.JFrame {
     }
     
     private void start_reglasButActionPerformed(ActionEvent evt) {
-    	// TODO add your handling code here:
+        URL url=null;
+        try {
+            url = new URL("https://www.pokerstars.es/poker/games/texas-holdem/");
+            try {
+                Desktop.getDesktop().browse(url.toURI());
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (URISyntaxException e) {
+                e.printStackTrace();
+            }
+        } catch (MalformedURLException e1) {
+            e1.printStackTrace();
+        }
     }
     
     private void game_apostarButActionPerformed(ActionEvent evt) {
