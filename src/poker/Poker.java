@@ -79,8 +79,10 @@ public class Poker extends JFrame {
         game_p5Pane = new JLayeredPane();
         game_chair6Label = new JLabel();
         game_p6Pane = new JLayeredPane();
-        game_dineroLabel = new JLabel();
-        game_apuestaLabel = new JLabel();
+        game_dineroLabel1 = new JLabel();
+        game_dineroLabel2 = new JLabel();
+        game_apuestaLabel1 = new JLabel();
+        game_apuestaLabel2 = new JLabel();
         game_apostarBut = new JButton();
         game_apuestaText = new JTextField();
         game_pasarBut = new JButton();
@@ -176,6 +178,8 @@ public class Poker extends JFrame {
         gameLayer.setLayer(game_p1Pane, JLayeredPane.POPUP_LAYER);
         gameLayer.add(game_p1Pane);
         game_p1Pane.setBounds(575, 120, 120, 90);
+        
+        
 
         game_chair2Label.setIcon(new RotatedIcon(new ImageIcon(getClass().getResource("/img/chair.png")), Rotate.UPSIDE_DOWN));
         game_chair2Label.setPreferredSize(new Dimension(150, 150));
@@ -232,21 +236,27 @@ public class Poker extends JFrame {
         gameLayer.add(game_p6Pane);
         game_p6Pane.setBounds(817, 140, 120, 90);
 
-        game_dineroLabel.setFont(new Font("Fira Sans", 0, 36)); // NOI18N
-        game_dineroLabel.setText("  DINERO:");
-        game_dineroLabel.setToolTipText("");
-        game_dineroLabel.setOpaque(true);
-        gameLayer.setLayer(game_dineroLabel, JLayeredPane.MODAL_LAYER);
-        gameLayer.add(game_dineroLabel);
-        game_dineroLabel.setBounds(50, 500, 300, 100);
-
-        game_apuestaLabel.setFont(new Font("Fira Sans", 0, 36)); // NOI18N
-        game_apuestaLabel.setText("APUESTA:");
-        game_apuestaLabel.setToolTipText("");
-        game_apuestaLabel.setOpaque(true);
-        gameLayer.setLayer(game_apuestaLabel, JLayeredPane.MODAL_LAYER);
-        gameLayer.add(game_apuestaLabel);
-        game_apuestaLabel.setBounds(920, 500, 300, 100);
+        game_dineroLabel1.setIcon(new ImageIcon(getClass().getResource("/img/bg-dinero.png")));
+        gameLayer.setLayer(game_dineroLabel1, JLayeredPane.MODAL_LAYER);
+        gameLayer.add(game_dineroLabel1);
+        game_dineroLabel1.setBounds(120, 500, 150, 50);
+        
+        game_dineroLabel2.setFont(new Font("Fira Sans", 0, 36));
+        game_dineroLabel2.setIcon(new ImageIcon(getClass().getResource("/img/bg-text.png")));
+        gameLayer.setLayer(game_dineroLabel2, JLayeredPane.MODAL_LAYER);
+        gameLayer.add(game_dineroLabel2);
+        game_dineroLabel2.setBounds(120, 555, 150, 50);
+        
+        game_apuestaLabel1.setIcon(new ImageIcon(getClass().getResource("/img/bg-apuesta.png")));
+        gameLayer.setLayer(game_apuestaLabel1, JLayeredPane.MODAL_LAYER);
+        gameLayer.add(game_apuestaLabel1);
+        game_apuestaLabel1.setBounds(999, 500, 150, 50);
+        
+        game_apuestaLabel2.setFont(new Font("Fira Sans", 0, 36));
+        game_apuestaLabel2.setIcon(new ImageIcon(getClass().getResource("/img/bg-text.png")));
+        gameLayer.setLayer(game_apuestaLabel2, JLayeredPane.MODAL_LAYER);
+        gameLayer.add(game_apuestaLabel2);
+        game_apuestaLabel2.setBounds(999, 555, 150, 50);
 
         game_apostarBut.setText("APOSTAR");
         game_apostarBut.addActionListener(new ActionListener() {
@@ -381,7 +391,8 @@ public class Poker extends JFrame {
     private JButton end_salirBut;
     private JLayeredPane gameLayer;
     private JButton game_apostarBut;
-    private JLabel game_apuestaLabel;
+    private JLabel game_apuestaLabel1;
+    private JLabel game_apuestaLabel2;
     private JTextField game_apuestaText;
     private JLabel game_chair1Label;
     private JLabel game_chair2Label;
@@ -389,7 +400,8 @@ public class Poker extends JFrame {
     private JLabel game_chair4Label;
     private JLabel game_chair5Label;
     private JLabel game_chair6Label;
-    private JLabel game_dineroLabel;
+    private JLabel game_dineroLabel1;
+    private JLabel game_dineroLabel2;
     private JLabel game_bgLabel;
     private JLayeredPane game_p1Pane;
     private JLayeredPane game_p2Pane;
