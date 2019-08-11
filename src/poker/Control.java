@@ -7,16 +7,18 @@ package poker;
 
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author crhistian
  */
 public class Control {
 	
-    private ArrayList<Cartas> baraja, pila;
+    private Baraja baraja;
     
-    public void control(){
-        baraja = new ArrayList<Cartas> (52);
+    public Control(){
+        baraja = new Baraja();
     }
     
 }
