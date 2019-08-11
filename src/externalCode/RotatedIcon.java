@@ -1,10 +1,21 @@
+/**
+  Archivo: RotatedIcon.java
+  Fecha creación:		Aug 11, 2019
+  Última modificación:	mes d, 2019
+  Versión: 0.1
+  Licencia: GPL
+
+  Autores:	Nicolas Jaramillo Mayor        1840558
+
+  Email:	nicolas.jaramillo@correounivalle.edu.co
+
+*/
 package externalCode;
 
 import java.awt.Component;
 import java.awt.Graphics2D;
 import java.awt.Graphics;
 import java.awt.RenderingHints;
-import java.awt.geom.AffineTransform;
 import javax.swing.Icon;
 
 // TODO: Auto-generated Javadoc

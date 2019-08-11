@@ -1,20 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/**
+  Archivo: Main.java
+  Fecha creación:		Aug 11, 2019
+  Última modificación:	mes d, 2019
+  Versión: 0.1
+  Licencia: GPL
+
+  Autores:	Nicolas Jaramillo Mayor        1840558
+
+  Email:	nicolas.jaramillo@correounivalle.edu.co
+
+*/
 package poker;
 
 /**
- *
- * @author ZNK5
+ * 
  */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -46,5 +52,5 @@ public class Main {
             }
         });
     }
-    
+
 }

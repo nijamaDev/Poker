@@ -1,9 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/**
+  Archivo: Poker.java
+  Fecha creación:		Aug 11, 2019
+  Última modificación:	mes d, 2019
+  Versión: 0.1
+  Licencia: GPL
+
+  Autores:	Nicolas Jaramillo Mayor        1840558
+
+  Email:	nicolas.jaramillo@correounivalle.edu.co
+
+*/
 package poker;
+
+import javax.swing.JFrame;
 
 import java.awt.Color;
 import java.awt.Cursor;
@@ -31,7 +40,7 @@ import java.net.URL;
  *
  * @author ZNK5
  */
-public class Poker extends javax.swing.JFrame {
+public class Poker extends JFrame {
 
     /**
      * Creates new form Poker
