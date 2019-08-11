@@ -15,7 +15,7 @@ import javax.swing.JLabel;
 public class Carta extends JLabel{
 	
     /**Cara trasera de la carta*/
-    private final ImageIcon back = new ImageIcon("src/img.cards/back.png");
+    private final ImageIcon back = new ImageIcon(getClass().getResource("/img/cards/back.png"));
     /**Cara delantera de la carta*/
     private ImageIcon front;
     /** Valor y tipo de la carta*/

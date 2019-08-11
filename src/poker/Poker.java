@@ -92,9 +92,10 @@ public class Poker extends JFrame {
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setName("POKER"); // NOI18N
-        setPreferredSize(new Dimension(1270, 700));
+        setPreferredSize(new Dimension(1270, 720));
+        setResizable(false);
         getContentPane().setLayout(null);
-
+        
         mainPane.setPreferredSize(new Dimension(1270, 700));
         
         //------------------------ START LAYER------------------------
@@ -348,6 +349,17 @@ public class Poker extends JFrame {
     
     private void game_apostarButActionPerformed(ActionEvent evt) {
     	// TODO add your handling code here:
+    	Carta cartaPrueba = new Carta(new ImageIcon(getClass().getResource("/img/cards/AS.png")), 1, 1);
+    	cartaPrueba.setPreferredSize(new Dimension(200, 306));
+    	//cartaPrueba.setOpaque(true);
+    	cartaPrueba.showCard(1);
+    	gameLayer.setLayer(cartaPrueba, JLayeredPane.DRAG_LAYER);
+    	gameLayer.add(cartaPrueba);
+    	cartaPrueba.setBounds(500, 394, 150, 225);
+    	gameLayer.revalidate();
+    	gameLayer.repaint();
+    	System.out.println("apostar");
+    	
     }
 
     private void game_pasarButActionPerformed(ActionEvent evt) {
