@@ -69,18 +69,26 @@ public class Poker extends JFrame {
         game_tableLabel = new JLabel();
         game_chair1Label = new JLabel();
         game_p1Pane = new JLayeredPane();
+        game_p1TableCards = new JLabel();
         game_chair2Label = new JLabel();
         game_p2Pane = new JLayeredPane();
+        game_p2TableCards = new JLabel();
         game_chair3Label = new JLabel();
         game_p3Pane = new JLayeredPane();
+        game_p3TableCards = new JLabel();
         game_chair4Label = new JLabel();
         game_p4Pane = new JLayeredPane();
+        game_p4TableCards = new JLabel();
         game_chair5Label = new JLabel();
         game_p5Pane = new JLayeredPane();
+        game_p5TableCards = new JLabel();
         game_chair6Label = new JLabel();
         game_p6Pane = new JLayeredPane();
-        game_dineroLabel = new JLabel();
-        game_apuestaLabel = new JLabel();
+        game_p6TableCards = new JLabel();
+        game_dineroLabel1 = new JLabel();
+        game_dineroLabel2 = new JLabel();
+        game_apuestaLabel1 = new JLabel();
+        game_apuestaLabel2 = new JLabel();
         game_apostarBut = new JButton();
         game_apuestaText = new JTextField();
         game_pasarBut = new JButton();
@@ -91,10 +99,14 @@ public class Poker extends JFrame {
         end_salirBut = new JButton();
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setName("POKER"); // NOI18N
+        
+        setName("POKER");
         setPreferredSize(new Dimension(1270, 700));
+
         setResizable(false);
         getContentPane().setLayout(null);
+        this.setTitle("POKER");
+        this.setIconImage(new ImageIcon(getClass().getResource("/img/cards/back.png")).getImage());
         
         mainPane.setPreferredSize(new Dimension(1270, 700));
         
@@ -172,21 +184,33 @@ public class Poker extends JFrame {
         gameLayer.add(game_chair1Label);
         game_chair1Label.setBounds(560, 0, 150, 150);
 
-        game_p1Pane.setPreferredSize(new Dimension(120, 90));
+        game_p1Pane.setPreferredSize(new Dimension(100, 100));
         gameLayer.setLayer(game_p1Pane, JLayeredPane.POPUP_LAYER);
         gameLayer.add(game_p1Pane);
-        game_p1Pane.setBounds(575, 120, 120, 90);
-
+        game_p1Pane.setBounds(575, 100, 100, 100);
+        
+        game_p1TableCards.setIcon((new RotatedIcon(new ImageIcon(getClass().getResource("/img/cards/back-mini.png")), Rotate.UPSIDE_DOWN)));
+        game_p1Pane.add(game_p1TableCards);
+        game_p1TableCards.setSize(100, 100);
+        game_p1TableCards.setLocation(0, 0);
+        //game_p1TableCards.setVisible(false);
+        
         game_chair2Label.setIcon(new RotatedIcon(new ImageIcon(getClass().getResource("/img/chair.png")), Rotate.UPSIDE_DOWN));
         game_chair2Label.setPreferredSize(new Dimension(150, 150));
         gameLayer.setLayer(game_chair2Label, JLayeredPane.PALETTE_LAYER);
         gameLayer.add(game_chair2Label);
         game_chair2Label.setBounds(560, 380, 150, 150);
 
-        game_p2Pane.setPreferredSize(new Dimension(120, 90));
+        game_p2Pane.setPreferredSize(new Dimension(100, 100));
         gameLayer.setLayer(game_p2Pane, JLayeredPane.POPUP_LAYER);
         gameLayer.add(game_p2Pane);
-        game_p2Pane.setBounds(575, 325, 120, 90);
+        game_p2Pane.setBounds(600, 325, 100, 100);
+        
+        game_p2TableCards.setIcon(new ImageIcon(getClass().getResource("/img/cards/back-mini.png")));
+        game_p2Pane.add(game_p2TableCards);
+        game_p2TableCards.setSize(100, 100);
+        game_p2TableCards.setLocation(0, 0);
+        //game_p2TableCards.setVisible(false);
 
         game_chair3Label.setIcon(new RotatedIcon(new ImageIcon(getClass().getResource("/img/chair.png")), (double) 135));
         game_chair3Label.setPreferredSize(new Dimension(150, 150));
@@ -194,10 +218,16 @@ public class Poker extends JFrame {
         gameLayer.add(game_chair3Label);
         game_chair3Label.setBounds(820, 320, 150, 150);
 
-        game_p3Pane.setPreferredSize(new Dimension(120, 90));
+        game_p3Pane.setPreferredSize(new Dimension(100, 100));
         gameLayer.setLayer(game_p3Pane, JLayeredPane.POPUP_LAYER);
         gameLayer.add(game_p3Pane);
-        game_p3Pane.setBounds(817, 300, 120, 90);
+        game_p3Pane.setBounds(800, 300, 100, 100);
+        
+        game_p3TableCards.setIcon(new RotatedIcon(new ImageIcon(getClass().getResource("/img/cards/back-mini.png")), (double) - 45));
+        game_p3Pane.add(game_p3TableCards);
+        game_p3TableCards.setSize(100, 100);
+        game_p3TableCards.setLocation(0, 0);
+        //game_p3TableCards.setVisible(false);
 
         game_chair4Label.setIcon(new RotatedIcon(new ImageIcon(getClass().getResource("/img/chair.png")), (double) -45));
         game_chair4Label.setPreferredSize(new Dimension(150, 150));
@@ -209,6 +239,12 @@ public class Poker extends JFrame {
         gameLayer.setLayer(game_p4Pane, JLayeredPane.POPUP_LAYER);
         gameLayer.add(game_p4Pane);
         game_p4Pane.setBounds(333, 140, 120, 90);
+        
+        game_p4TableCards.setIcon(new RotatedIcon(new ImageIcon(getClass().getResource("/img/cards/back-mini.png")), (double) 135));
+        game_p4Pane.add(game_p4TableCards);
+        game_p4TableCards.setSize(100, 100);
+        game_p4TableCards.setLocation(0, 0);
+        //game_p4TableCards.setVisible(false);
 
         game_chair5Label.setIcon(new RotatedIcon(new ImageIcon(getClass().getResource("/img/chair.png")), (double) -135));
         game_chair5Label.setPreferredSize(new Dimension(150, 150));
@@ -216,10 +252,16 @@ public class Poker extends JFrame {
         gameLayer.add(game_chair5Label);
         game_chair5Label.setBounds(260, 320, 150, 150);
 
-        game_p5Pane.setPreferredSize(new Dimension(120, 90));
+        game_p5Pane.setPreferredSize(new Dimension(100, 100));
         gameLayer.setLayer(game_p5Pane, JLayeredPane.POPUP_LAYER);
         gameLayer.add(game_p5Pane);
-        game_p5Pane.setBounds(333, 300, 120, 90);
+        game_p5Pane.setBounds(333, 300, 100, 100);
+        
+        game_p5TableCards.setIcon(new RotatedIcon(new ImageIcon(getClass().getResource("/img/cards/back-mini.png")), (double) 45));
+        game_p5Pane.add(game_p5TableCards);
+        game_p5TableCards.setSize(100, 100);
+        game_p5TableCards.setLocation(0, 0);
+        //game_p5TableCards.setVisible(false);
 
         game_chair6Label.setIcon(new RotatedIcon(new ImageIcon(getClass().getResource("/img/chair.png")), (double) 45));
         game_chair6Label.setPreferredSize(new Dimension(150, 150));
@@ -227,26 +269,38 @@ public class Poker extends JFrame {
         gameLayer.add(game_chair6Label);
         game_chair6Label.setBounds(820, 80, 150, 150);
 
-        game_p6Pane.setPreferredSize(new Dimension(120, 90));
+        game_p6Pane.setPreferredSize(new Dimension(100, 100));
         gameLayer.setLayer(game_p6Pane, JLayeredPane.POPUP_LAYER);
         gameLayer.add(game_p6Pane);
-        game_p6Pane.setBounds(817, 140, 120, 90);
+        game_p6Pane.setBounds(817, 140, 100, 100);
+        
+        game_p6TableCards.setIcon(new RotatedIcon(new ImageIcon(getClass().getResource("/img/cards/back-mini.png")), (double) -135));
+        game_p6Pane.add(game_p6TableCards);
+        game_p6TableCards.setSize(100, 100);
+        game_p6TableCards.setLocation(0, 0);
+        //game_p6TableCards.setVisible(false);
 
-        game_dineroLabel.setFont(new Font("Fira Sans", 0, 36)); // NOI18N
-        game_dineroLabel.setText("  DINERO:");
-        game_dineroLabel.setToolTipText("");
-        game_dineroLabel.setOpaque(true);
-        gameLayer.setLayer(game_dineroLabel, JLayeredPane.MODAL_LAYER);
-        gameLayer.add(game_dineroLabel);
-        game_dineroLabel.setBounds(50, 500, 300, 100);
-
-        game_apuestaLabel.setFont(new Font("Fira Sans", 0, 36)); // NOI18N
-        game_apuestaLabel.setText("APUESTA:");
-        game_apuestaLabel.setToolTipText("");
-        game_apuestaLabel.setOpaque(true);
-        gameLayer.setLayer(game_apuestaLabel, JLayeredPane.MODAL_LAYER);
-        gameLayer.add(game_apuestaLabel);
-        game_apuestaLabel.setBounds(920, 500, 300, 100);
+        game_dineroLabel1.setIcon(new ImageIcon(getClass().getResource("/img/bg-dinero.png")));
+        gameLayer.setLayer(game_dineroLabel1, JLayeredPane.MODAL_LAYER);
+        gameLayer.add(game_dineroLabel1);
+        game_dineroLabel1.setBounds(120, 500, 150, 50);
+        
+        game_dineroLabel2.setFont(new Font("Fira Sans", 0, 36));
+        game_dineroLabel2.setIcon(new ImageIcon(getClass().getResource("/img/bg-text.png")));
+        gameLayer.setLayer(game_dineroLabel2, JLayeredPane.MODAL_LAYER);
+        gameLayer.add(game_dineroLabel2);
+        game_dineroLabel2.setBounds(120, 555, 150, 50);
+        
+        game_apuestaLabel1.setIcon(new ImageIcon(getClass().getResource("/img/bg-apuesta.png")));
+        gameLayer.setLayer(game_apuestaLabel1, JLayeredPane.MODAL_LAYER);
+        gameLayer.add(game_apuestaLabel1);
+        game_apuestaLabel1.setBounds(999, 500, 150, 50);
+        
+        game_apuestaLabel2.setFont(new Font("Fira Sans", 0, 36));
+        game_apuestaLabel2.setIcon(new ImageIcon(getClass().getResource("/img/bg-text.png")));
+        gameLayer.setLayer(game_apuestaLabel2, JLayeredPane.MODAL_LAYER);
+        gameLayer.add(game_apuestaLabel2);
+        game_apuestaLabel2.setBounds(999, 555, 150, 50);
 
         game_apostarBut.setText("APOSTAR");
         game_apostarBut.addActionListener(new ActionListener() {
@@ -394,7 +448,8 @@ public class Poker extends JFrame {
     private JButton end_salirBut;
     private JLayeredPane gameLayer;
     private JButton game_apostarBut;
-    private JLabel game_apuestaLabel;
+    private JLabel game_apuestaLabel1;
+    private JLabel game_apuestaLabel2;
     private JTextField game_apuestaText;
     private JLabel game_chair1Label;
     private JLabel game_chair2Label;
@@ -402,7 +457,8 @@ public class Poker extends JFrame {
     private JLabel game_chair4Label;
     private JLabel game_chair5Label;
     private JLabel game_chair6Label;
-    private JLabel game_dineroLabel;
+    private JLabel game_dineroLabel1;
+    private JLabel game_dineroLabel2;
     private JLabel game_bgLabel;
     private JLayeredPane game_p1Pane;
     private JLayeredPane game_p2Pane;
@@ -410,6 +466,12 @@ public class Poker extends JFrame {
     private JLayeredPane game_p4Pane;
     private JLayeredPane game_p5Pane;
     private JLayeredPane game_p6Pane;
+    private JLabel game_p1TableCards;
+    private JLabel game_p2TableCards;
+    private JLabel game_p3TableCards;
+    private JLabel game_p4TableCards;
+    private JLabel game_p5TableCards;
+    private JLabel game_p6TableCards;
     private JButton game_pasarBut;
     private JLabel game_tableLabel;
     private JLayeredPane mainPane;
