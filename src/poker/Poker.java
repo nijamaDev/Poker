@@ -26,6 +26,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 
 import externalCode.RotatedIcon;
@@ -298,10 +299,11 @@ public class Poker extends JFrame {
         
         game_dineroLabel3.setFont(new Font(Font.DIALOG, Font.BOLD, 26));
         game_dineroLabel3.setForeground(new Color(244,244,244));
-        game_dineroLabel3.setText("<html><div style='text-align: center;'>" + "100" + "</div></html>");
+        game_dineroLabel3.setHorizontalAlignment(SwingConstants.CENTER);
         gameLayer.setLayer(game_dineroLabel3, JLayeredPane.MODAL_LAYER + 1);
         gameLayer.add(game_dineroLabel3);
-        game_dineroLabel3.setBounds(125, 555, 150, 50);
+        game_dineroLabel3.setSize(150, 50);
+        game_dineroLabel3.setBounds(120, 555, 150, 50);
         
         game_apuestaLabel1.setIcon(new ImageIcon(getClass().getResource("/img/bg-apuesta.png")));
         gameLayer.setLayer(game_apuestaLabel1, JLayeredPane.MODAL_LAYER);
@@ -342,12 +344,12 @@ public class Poker extends JFrame {
         
         gameLayer.setLayer(game_cartasMostrar1, JLayeredPane.MODAL_LAYER);
         gameLayer.add(game_cartasMostrar1);
-        game_cartasMostrar1.setBounds(560, 500, 100, 154);
+        game_cartasMostrar1.setBounds(560, 425, 100, 154);
 		game_cartasMostrar1.setVisible(false);
         
         gameLayer.setLayer(game_cartasMostrar2, JLayeredPane.MODAL_LAYER + 1);
         gameLayer.add(game_cartasMostrar2);
-        game_cartasMostrar2.setBounds(610, 500, 100, 154);
+        game_cartasMostrar2.setBounds(590, 450, 150, 200);
 		game_cartasMostrar2.setVisible(false);
         
         game_mostrarBut.setText("MOSTRAR CARTAS");
@@ -464,6 +466,8 @@ public class Poker extends JFrame {
         	game_p2TableCards.setVisible(false);
         	mostrarCartas = true;
     	}
+    	revalidate();
+    	repaint();
     }
     
     private void end_aceptarButActionPerformed(ActionEvent evt) {

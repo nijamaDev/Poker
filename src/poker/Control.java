@@ -14,6 +14,7 @@
 package poker;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * 
@@ -35,6 +36,7 @@ public class Control {
     }
     
     public void repartirCartas() {
+    		baraja.revolver();
     	for (int n=0; n<2; n++) {
     		for (int i=0; i<jugadores.size(); i++) {
             	Carta nuevaCarta = baraja.takeCard();
