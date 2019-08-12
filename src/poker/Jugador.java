@@ -26,6 +26,11 @@ public class Jugador {
 	/** The Cartas del jugador. */
 	protected ArrayList<Carta> CartasDelJugador = new ArrayList<Carta>();
 	private Cartera cartera;
+	protected int puesto;
+	
+	public Jugador(int puesto) {
+		this.puesto = puesto;
+	}
 	
 	/**
 	 * Adds the Carta.
@@ -61,5 +66,13 @@ public class Jugador {
 	 */
 	public Cartera getCartera() {
 		return cartera;
+	}
+	
+	/**
+	 * Devuelve el puesto en el que está sentado el jugador
+	 * @return el puesto
+	 */
+	public int getPuesto() {
+		return puesto;
 	}
 }

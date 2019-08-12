@@ -20,7 +20,7 @@ package poker;
  * The Class Bot.
  */
 public class Bot extends Jugador{
-	Bot (int quien){
-		
+	public Bot(int puesto) {
+		super(puesto);
 	}
 }

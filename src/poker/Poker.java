@@ -1,8 +1,8 @@
 /**
   Archivo: Poker.java
-  Fecha creación:		Aug 11, 2019
-  Última modificación:	mes d, 2019
-  Versión: 0.1
+  Fecha creaciï¿½n:		Aug 11, 2019
+  ï¿½ltima modificaciï¿½n:	mes d, 2019
+  Versiï¿½n: 0.1
   Licencia: GPL
 
   Autores:	Nicolas Jaramillo Mayor        1840558
@@ -99,8 +99,10 @@ public class Poker extends JFrame {
         end_salirBut = new JButton();
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        
         setName("POKER");
-        setPreferredSize(new Dimension(1270, 720));
+        setPreferredSize(new Dimension(1270, 700));
+
         setResizable(false);
         getContentPane().setLayout(null);
         this.setTitle("POKER");
@@ -381,6 +383,7 @@ public class Poker extends JFrame {
 
     private void start_nuevaButActionPerformed(ActionEvent evt) {
     	startLayer.setVisible(false);
+    	nuevaPartida();
     }
     
     private void start_reglasButActionPerformed(ActionEvent evt) {
@@ -402,14 +405,13 @@ public class Poker extends JFrame {
     private void game_apostarButActionPerformed(ActionEvent evt) {
     	// TODO add your handling code here:
     	Carta cartaPrueba = new Carta(new ImageIcon(getClass().getResource("/img/cards/AS.png")), 1, 1);
-    	cartaPrueba.setPreferredSize(new Dimension(200, 306));
-    	//cartaPrueba.setOpaque(true);
+    	cartaPrueba.setPreferredSize(new Dimension(100, 154));
     	cartaPrueba.showCard(1);
     	gameLayer.setLayer(cartaPrueba, JLayeredPane.DRAG_LAYER);
     	gameLayer.add(cartaPrueba);
-    	cartaPrueba.setBounds(500, 394, 150, 225);
-    	gameLayer.revalidate();
-    	gameLayer.repaint();
+    	cartaPrueba.setBounds(500, 394, 100, 154);
+
+    	repaint();
     	System.out.println("apostar");
     	
     }
@@ -423,9 +425,22 @@ public class Poker extends JFrame {
     	startLayer.setVisible(true);
     }
     
+    private void nuevaPartida() {
+    	control = new Control();
+    	nuevaRonda();
+    }
     
+    private void nuevaRonda() {
+    	
+    	repaint();
+    }
+    
+    private void repartirCartas() {
+    	control.
+    }
   
     // Variables declaration
+    private Control control;
     private JLayeredPane endLayer;
     private JButton end_aceptarBut;
     private JLabel end_bgLabel;

@@ -1,8 +1,8 @@
 /**
   Archivo: Baraja.java
-  Fecha creación:		Aug 10, 2019
-  Última modificación:	mes d, 2019
-  Versión: 0.1
+  Fecha creaciï¿½n:		Aug 10, 2019
+  ï¿½ltima modificaciï¿½n:	mes d, 2019
+  Versiï¿½n: 0.1
   Licencia: GPL
 
   Autores:	Nicolas Jaramillo Mayor        1840558
@@ -57,7 +57,7 @@ public class Baraja {
         			tipo = "D"; // Diamonds
         			break;
         		}
-        		Carta carta = new Carta(new ImageIcon("src/img/cards/" + valor + tipo + ".png"), value, type);
+        		Carta carta = new Carta(new ImageIcon("/img/cards/" + valor + tipo + ".png"), value, type);
         		cartas.add(carta);
         	}
         }
@@ -70,7 +70,7 @@ public class Baraja {
 		Collections.shuffle(baraja);
 	}
 	
-	public Carta getCard() {
+	public Carta takeCard() {
 		Carta carta = baraja.get(0);
 		baraja.remove(0);
 		return carta;
