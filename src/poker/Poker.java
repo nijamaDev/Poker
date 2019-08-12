@@ -296,11 +296,12 @@ public class Poker extends JFrame {
         gameLayer.add(game_dineroLabel2);
         game_dineroLabel2.setBounds(120, 555, 150, 50);
         
-        game_dineroLabel3.setFont(new Font("Fira Sans", 0, 36));
-        game_dineroLabel3.setText(Integer.toString(Cartera.getDinero()));
-        gameLayer.setLayer(game_dineroLabel3, JLayeredPane.MODAL_LAYER);
+        game_dineroLabel3.setFont(new Font(Font.DIALOG, Font.BOLD, 26));
+        game_dineroLabel3.setForeground(new Color(244,244,244));
+        game_dineroLabel3.setText("<html><div style='text-align: center;'>" + "100" + "</div></html>");
+        gameLayer.setLayer(game_dineroLabel3, JLayeredPane.MODAL_LAYER + 1);
         gameLayer.add(game_dineroLabel3);
-        game_dineroLabel3.setBounds(120, 555, 150, 50);
+        game_dineroLabel3.setBounds(125, 555, 150, 50);
         
         game_apuestaLabel1.setIcon(new ImageIcon(getClass().getResource("/img/bg-apuesta.png")));
         gameLayer.setLayer(game_apuestaLabel1, JLayeredPane.MODAL_LAYER);
