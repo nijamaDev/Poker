@@ -22,6 +22,7 @@ import java.util.ArrayList;
  */
 public class Jugador {
 	
+	
 	/** The Cartas del jugador. */
 	protected ArrayList<Carta> CartasDelJugador = new ArrayList<Carta>();
 	private Cartera cartera;

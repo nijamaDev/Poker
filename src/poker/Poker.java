@@ -324,7 +324,7 @@ public class Poker extends JFrame {
         });
         gameLayer.setLayer(game_pasarBut, JLayeredPane.MODAL_LAYER);
         gameLayer.add(game_pasarBut);
-        game_pasarBut.setBounds(1000, 620, 126, 31);
+        game_pasarBut.setBounds(1012, 620, 126, 31);
 
         mainPane.setLayer(gameLayer, JLayeredPane.DEFAULT_LAYER);
         mainPane.add(gameLayer);
