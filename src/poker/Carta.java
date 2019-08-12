@@ -1,8 +1,8 @@
 /**
   Archivo: Carta.java
-  Fecha creación:		2019/08/01
-  Última modificación:	2019/08/14
-  Versión: 0.4
+  Fecha creaciï¿½n:		2019/08/01
+  ï¿½ltima modificaciï¿½n:	2019/08/14
+  Versiï¿½n: 0.4
   Licencia: GPL
 
   Autores:	Nicolas Jaramillo Mayor        1840558
@@ -28,6 +28,10 @@ public class Carta extends JLabel{
     private ImageIcon front;
     /** Valor y tipo de la carta*/
     private int value, type;
+    
+    public Carta() {
+    	
+    }
     
     public Carta(ImageIcon front, int value, int type){
         this.front = front;

@@ -35,6 +35,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.ArrayList;
 
 /**
  *
@@ -84,6 +85,7 @@ public class Poker extends JFrame {
         game_chair6Label = new JLabel();
         game_p6Pane = new JLayeredPane();
         game_p6TableCards = new JLabel();
+        game_tableCards = new ArrayList<Carta>();
         game_dineroLabel1 = new JLabel();
         game_dineroLabel2 = new JLabel();
         game_apuestaLabel1 = new JLabel();
@@ -91,6 +93,9 @@ public class Poker extends JFrame {
         game_apostarBut = new JButton();
         game_apuestaText = new JTextField();
         game_pasarBut = new JButton();
+        game_cartasMostrar1 = new JLabel();
+        game_cartasMostrar2 = new JLabel();
+        game_mostrarBut = new JButton();
         endLayer = new JLayeredPane();
         end_bgLabel = new JLabel();
         end_gameOverLabel = new JLabel();
@@ -165,7 +170,7 @@ public class Poker extends JFrame {
 
         gameLayer.setPreferredSize(new Dimension(1270, 700));
 
-        game_bgLabel.setIcon(new ImageIcon(getClass().getResource("/img/bg.jpg"))); // NOI18N
+        game_bgLabel.setIcon(new ImageIcon(getClass().getResource("/img/bg.jpg")));
         game_bgLabel.setMaximumSize(new Dimension(1270, 700));
         game_bgLabel.setMinimumSize(new Dimension(1270, 700));
         game_bgLabel.setOpaque(true);
@@ -173,12 +178,12 @@ public class Poker extends JFrame {
         gameLayer.add(game_bgLabel);
         game_bgLabel.setBounds(0, 0, 1270, 700);
 
-        game_tableLabel.setIcon(new ImageIcon(getClass().getResource("/img/table.png"))); // NOI18N
+        game_tableLabel.setIcon(new ImageIcon(getClass().getResource("/img/table.png")));
         gameLayer.setLayer(game_tableLabel, JLayeredPane.MODAL_LAYER);
         gameLayer.add(game_tableLabel);
         game_tableLabel.setBounds(311, 100, 647, 327);
 
-        game_chair1Label.setIcon(new ImageIcon(getClass().getResource("/img/chair.png"))); // NOI18N
+        game_chair1Label.setIcon(new ImageIcon(getClass().getResource("/img/chair.png")));
         gameLayer.setLayer(game_chair1Label, JLayeredPane.PALETTE_LAYER);
         gameLayer.add(game_chair1Label);
         game_chair1Label.setBounds(560, 0, 150, 150);
@@ -192,7 +197,7 @@ public class Poker extends JFrame {
         game_p1Pane.add(game_p1TableCards);
         game_p1TableCards.setSize(100, 100);
         game_p1TableCards.setLocation(0, 0);
-        //game_p1TableCards.setVisible(false);
+        game_p1TableCards.setVisible(false);
         
         game_chair2Label.setIcon(new RotatedIcon(new ImageIcon(getClass().getResource("/img/chair.png")), Rotate.UPSIDE_DOWN));
         game_chair2Label.setPreferredSize(new Dimension(150, 150));
@@ -209,7 +214,7 @@ public class Poker extends JFrame {
         game_p2Pane.add(game_p2TableCards);
         game_p2TableCards.setSize(100, 100);
         game_p2TableCards.setLocation(0, 0);
-        //game_p2TableCards.setVisible(false);
+        game_p2TableCards.setVisible(false);
 
         game_chair3Label.setIcon(new RotatedIcon(new ImageIcon(getClass().getResource("/img/chair.png")), (double) 135));
         game_chair3Label.setPreferredSize(new Dimension(150, 150));
@@ -226,7 +231,7 @@ public class Poker extends JFrame {
         game_p3Pane.add(game_p3TableCards);
         game_p3TableCards.setSize(100, 100);
         game_p3TableCards.setLocation(0, 0);
-        //game_p3TableCards.setVisible(false);
+        game_p3TableCards.setVisible(false);
 
         game_chair4Label.setIcon(new RotatedIcon(new ImageIcon(getClass().getResource("/img/chair.png")), (double) -45));
         game_chair4Label.setPreferredSize(new Dimension(150, 150));
@@ -243,7 +248,7 @@ public class Poker extends JFrame {
         game_p4Pane.add(game_p4TableCards);
         game_p4TableCards.setSize(100, 100);
         game_p4TableCards.setLocation(0, 0);
-        //game_p4TableCards.setVisible(false);
+        game_p4TableCards.setVisible(false);
 
         game_chair5Label.setIcon(new RotatedIcon(new ImageIcon(getClass().getResource("/img/chair.png")), (double) -135));
         game_chair5Label.setPreferredSize(new Dimension(150, 150));
@@ -260,7 +265,7 @@ public class Poker extends JFrame {
         game_p5Pane.add(game_p5TableCards);
         game_p5TableCards.setSize(100, 100);
         game_p5TableCards.setLocation(0, 0);
-        //game_p5TableCards.setVisible(false);
+        game_p5TableCards.setVisible(false);
 
         game_chair6Label.setIcon(new RotatedIcon(new ImageIcon(getClass().getResource("/img/chair.png")), (double) 45));
         game_chair6Label.setPreferredSize(new Dimension(150, 150));
@@ -277,8 +282,8 @@ public class Poker extends JFrame {
         game_p6Pane.add(game_p6TableCards);
         game_p6TableCards.setSize(100, 100);
         game_p6TableCards.setLocation(0, 0);
-        //game_p6TableCards.setVisible(false);
-
+        game_p6TableCards.setVisible(false);
+        
         game_dineroLabel1.setIcon(new ImageIcon(getClass().getResource("/img/bg-dinero.png")));
         gameLayer.setLayer(game_dineroLabel1, JLayeredPane.MODAL_LAYER);
         gameLayer.add(game_dineroLabel1);
@@ -326,6 +331,26 @@ public class Poker extends JFrame {
         gameLayer.setLayer(game_pasarBut, JLayeredPane.MODAL_LAYER);
         gameLayer.add(game_pasarBut);
         game_pasarBut.setBounds(1012, 620, 126, 31);
+        
+        gameLayer.setLayer(game_cartasMostrar1, JLayeredPane.MODAL_LAYER);
+        gameLayer.add(game_cartasMostrar1);
+        game_cartasMostrar1.setBounds(560, 500, 100, 154);
+		game_cartasMostrar1.setVisible(false);
+        
+        gameLayer.setLayer(game_cartasMostrar2, JLayeredPane.MODAL_LAYER + 1);
+        gameLayer.add(game_cartasMostrar2);
+        game_cartasMostrar2.setBounds(610, 500, 100, 154);
+		game_cartasMostrar2.setVisible(false);
+        
+        game_mostrarBut.setText("MOSTRAR CARTAS");
+        game_mostrarBut.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                game_mostrarButActionPerformed(evt);
+            }
+        });
+        gameLayer.setLayer(game_mostrarBut, JLayeredPane.MODAL_LAYER);
+        gameLayer.add(game_mostrarBut);
+        game_mostrarBut.setBounds(550, 650, 168, 31);
 
         mainPane.setLayer(gameLayer, JLayeredPane.DEFAULT_LAYER);
         mainPane.add(gameLayer);
@@ -341,7 +366,7 @@ public class Poker extends JFrame {
         endLayer.add(end_bgLabel);
         end_bgLabel.setBounds(0, 0, 1270, 700);
 
-        end_gameOverLabel.setIcon(new ImageIcon(getClass().getResource("/img/gameOver.png"))); // NOI18N
+        end_gameOverLabel.setIcon(new ImageIcon(getClass().getResource("/img/gameOver.png")));
         endLayer.setLayer(end_gameOverLabel, JLayeredPane.POPUP_LAYER);
         endLayer.add(end_gameOverLabel);
         end_gameOverLabel.setBounds(361, 150, 547, 122);
@@ -419,6 +444,20 @@ public class Poker extends JFrame {
     	endLayer.setVisible(true);
     }
     
+    private void game_mostrarButActionPerformed(ActionEvent evt) {
+    	if (mostrarCartas) {
+    		game_cartasMostrar1.setVisible(false);
+        	game_cartasMostrar2.setVisible(false);
+        	game_p2TableCards.setVisible(true);
+        	mostrarCartas = false;
+    	} else {
+    		game_cartasMostrar1.setVisible(true);
+        	game_cartasMostrar2.setVisible(true);
+        	game_p2TableCards.setVisible(false);
+        	mostrarCartas = true;
+    	}
+    }
+    
     private void end_aceptarButActionPerformed(ActionEvent evt) {
     	endLayer.setVisible(false);
     	startLayer.setVisible(true);
@@ -430,15 +469,38 @@ public class Poker extends JFrame {
     }
     
     private void nuevaRonda() {
-    	repartirCartas();
+    	mostrarCartas = false;
+    	cartasMesa = 0;
+    	estadoDelJuego = 0;
+    	control.repartirCartas();
+    	control.getCartas(1).get(0).showCard(1);
+    	game_cartasMostrar1.setIcon(control.getCartas(1).get(0).getIcon());
+    	control.getCartas(1).get(1).showCard(2);
+    	game_cartasMostrar2.setIcon(control.getCartas(1).get(1).getIcon());
+    	game_p1TableCards.setVisible(true);
+    	game_p2TableCards.setVisible(true);
+    	for (int i=0; i<3; i++) {
+    		agregarCartaMesa();
+    	}
     	repaint();
     }
     
-    private void repartirCartas() {
-    	
+    private void agregarCartaMesa() {
+    	Carta nuevaCartaMesa = control.repartirCartaMesa();
+    	game_tableCards.add(nuevaCartaMesa);
+		gameLayer.setLayer(game_tableCards.get(cartasMesa), JLayeredPane.POPUP_LAYER+1);
+		gameLayer.add(game_tableCards.get(cartasMesa));
+		game_tableCards.get(cartasMesa).setBounds(360 + (cartasMesa*110), 180, 100, 154);
+		cartasMesa +=1;
+		repaint();
+		return;
     }
-  
+    
+    
     // Variables declaration
+    private boolean mostrarCartas;
+    private int estadoDelJuego;
+    private int cartasMesa;
     private Control control;
     private JLayeredPane endLayer;
     private JButton end_aceptarBut;
@@ -471,7 +533,11 @@ public class Poker extends JFrame {
     private JLabel game_p4TableCards;
     private JLabel game_p5TableCards;
     private JLabel game_p6TableCards;
+    private ArrayList<Carta> game_tableCards;
     private JButton game_pasarBut;
+    private JLabel game_cartasMostrar1;
+    private JLabel game_cartasMostrar2;
+    private JButton game_mostrarBut;
     private JLabel game_tableLabel;
     private JLayeredPane mainPane;
     private JLayeredPane startLayer;

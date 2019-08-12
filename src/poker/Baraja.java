@@ -1,8 +1,8 @@
 /**
   Archivo: Baraja.java
-  Fecha creación:		2019/08/01
-  Última modificación:	2019/08/14
-  Versión: 0.4
+  Fecha creaciï¿½n:		2019/08/01
+  ï¿½ltima modificaciï¿½n:	2019/08/14
+  Versiï¿½n: 0.4
   Licencia: GPL
 
   Autores:	Nicolas Jaramillo Mayor        1840558
@@ -31,6 +31,9 @@ public class Baraja {
         	for (int value = 1; value <= 13; value++) {
         		String valor = "";
         		switch (value) {
+        		case 1:
+        			valor ="A";
+        			break;
         		case 11:
         			valor = "J";
         			break;
@@ -58,7 +61,7 @@ public class Baraja {
         			tipo = "D"; // Diamonds
         			break;
         		}
-        		Carta carta = new Carta(new ImageIcon("/img/cards/" + valor + tipo + ".png"), value, type);
+        		Carta carta = new Carta(new ImageIcon(getClass().getResource("/img/cards/" + valor + tipo + ".png")), value, type);
         		cartas.add(carta);
         	}
         }
