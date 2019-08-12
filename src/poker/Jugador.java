@@ -1,15 +1,14 @@
 /**
   Archivo: Jugador.java
-  Fecha creaciÃ³n:		Jul 14, 2019
-  Ãšltima modificaciÃ³n:	Jul 22, 2019
-  VersiÃ³n: 0.9
+  Fecha creación:		2019/08/01
+  Última modificación:	2019/08/14
+  Versión: 0.4
   Licencia: GPL
 
-  Autores:	Nicolas Jaramillo Mayor         1840558
-  			Crhistian Alexander Garcia		1832124
+  Autores:	Nicolas Jaramillo Mayor        1840558
 
   Email:	nicolas.jaramillo@correounivalle.edu.co
-  			garcia.crhistian@correounivalle.edu.co
+
 */
 
 package poker;
@@ -69,7 +68,7 @@ public class Jugador {
 	}
 	
 	/**
-	 * Devuelve el puesto en el que estÃ¡ sentado el jugador
+	 * Devuelve el puesto en el que está¡ sentado el jugador
 	 * @return el puesto
 	 */
 	public int getPuesto() {

@@ -1,8 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/**
+  Archivo: Control.java
+  Fecha creación:		2019/08/01
+  Última modificación:	2019/08/14
+  Versión: 0.4
+  Licencia: GPL
+
+  Autores:	Nicolas Jaramillo Mayor        1840558
+
+  Email:	nicolas.jaramillo@correounivalle.edu.co
+
+*/
+
 package poker;
 
 import java.util.ArrayList;

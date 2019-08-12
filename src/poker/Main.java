@@ -1,8 +1,8 @@
 /**
   Archivo: Main.java
-  Fecha creación:		Aug 11, 2019
-  Última modificación:	mes d, 2019
-  Versión: 0.1
+  Fecha creación:		2019/08/01
+  Última modificación:	2019/08/14
+  Versión: 0.4
   Licencia: GPL
 
   Autores:	Nicolas Jaramillo Mayor        1840558

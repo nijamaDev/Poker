@@ -1,13 +1,6 @@
 /**
   Archivo: RotatedIcon.java
-  Fecha creación:		Aug 11, 2019
-  Última modificación:	mes d, 2019
-  Versión: 0.1
-  Licencia: GPL
-
-  Autores:	Nicolas Jaramillo Mayor        1840558
-
-  Email:	nicolas.jaramillo@correounivalle.edu.co
+  Code taken from: https://tips4java.wordpress.com/2009/04/06/rotated-icon/
 
 */
 package externalCode;

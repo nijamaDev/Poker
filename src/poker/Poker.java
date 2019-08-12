@@ -1,8 +1,8 @@
 /**
   Archivo: Poker.java
-  Fecha creaciï¿½n:		Aug 11, 2019
-  ï¿½ltima modificaciï¿½n:	mes d, 2019
-  Versiï¿½n: 0.1
+  Fecha creación:		2019/08/01
+  Última modificación:	2019/08/14
+  Versión: 0.4
   Licencia: GPL
 
   Autores:	Nicolas Jaramillo Mayor        1840558
@@ -38,7 +38,6 @@ import java.net.URL;
 
 /**
  *
- * @author ZNK5
  */
 public class Poker extends JFrame {
 
@@ -436,7 +435,7 @@ public class Poker extends JFrame {
     }
     
     private void repartirCartas() {
-    	control.
+    	
     }
   
     // Variables declaration

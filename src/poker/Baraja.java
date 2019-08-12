@@ -1,8 +1,8 @@
 /**
   Archivo: Baraja.java
-  Fecha creaciï¿½n:		Aug 10, 2019
-  ï¿½ltima modificaciï¿½n:	mes d, 2019
-  Versiï¿½n: 0.1
+  Fecha creación:		2019/08/01
+  Última modificación:	2019/08/14
+  Versión: 0.4
   Licencia: GPL
 
   Autores:	Nicolas Jaramillo Mayor        1840558
@@ -10,6 +10,7 @@
   Email:	nicolas.jaramillo@correounivalle.edu.co
 
 */
+
 package poker;
 
 import java.util.ArrayList;
