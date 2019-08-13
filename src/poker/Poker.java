@@ -92,6 +92,7 @@ public class Poker extends JFrame {
         game_dineroLabel3 = new JLabel();
         game_apuestaLabel1 = new JLabel();
         game_apuestaLabel2 = new JLabel();
+        game_apuestaLabel3 = new JLabel();
         game_apostarBut = new JButton();
         game_apuestaText = new JTextField();
         game_pasarBut = new JButton();
@@ -315,6 +316,13 @@ public class Poker extends JFrame {
         gameLayer.setLayer(game_apuestaLabel2, JLayeredPane.MODAL_LAYER);
         gameLayer.add(game_apuestaLabel2);
         game_apuestaLabel2.setBounds(999, 555, 150, 50);
+        
+        game_apuestaLabel3.setFont(new Font(Font.DIALOG, Font.BOLD, 26));
+        game_apuestaLabel3.setForeground(new Color(244,244,244));
+        game_apuestaLabel3.setHorizontalAlignment(SwingConstants.CENTER);
+        gameLayer.setLayer(game_apuestaLabel3, JLayeredPane.MODAL_LAYER);
+        gameLayer.add(game_apuestaLabel3);
+        game_apuestaLabel3.setBounds(999, 555, 150, 50);
 
         game_apostarBut.setText("APOSTAR");
         game_apostarBut.addActionListener(new ActionListener() {
@@ -523,6 +531,7 @@ public class Poker extends JFrame {
     private JButton game_apostarBut;
     private JLabel game_apuestaLabel1;
     private JLabel game_apuestaLabel2;
+    private JLabel game_apuestaLabel3;
     private JTextField game_apuestaText;
     private JLabel game_chair1Label;
     private JLabel game_chair2Label;
