@@ -56,7 +56,7 @@ public class Carta extends JLabel{
                 setIcon(front);
                 return;
             case 2:
-                setIcon(new RotatedIcon(front, (double) 45));
+                setIcon(new RotatedIcon(front, (double) 10));
         }
     }
 

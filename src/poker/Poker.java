@@ -57,7 +57,7 @@ public class Poker extends JFrame {
      */
     @SuppressWarnings("unchecked")
     private void initComponents() {
-
+    	
         mainPane = new JLayeredPane();
         startLayer = new JLayeredPane();
         start_bgLabel = new JLabel();
@@ -98,6 +98,8 @@ public class Poker extends JFrame {
         game_pasarBut = new JButton();
         game_cartasMostrar1 = new JLabel();
         game_cartasMostrar2 = new JLabel();
+        game_cartasBotMostrar1 = new JLabel();
+        game_cartasBotMostrar2 = new JLabel();
         game_mostrarBut = new JButton();
         endLayer = new JLayeredPane();
         end_bgLabel = new JLabel();
@@ -108,8 +110,7 @@ public class Poker extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         
         setName("POKER");
-        setPreferredSize(new Dimension(1270, 700));
-
+        this.setPreferredSize(new Dimension(1270, 730));
         setResizable(false);
         getContentPane().setLayout(null);
         this.setTitle("POKER");
@@ -127,7 +128,7 @@ public class Poker extends JFrame {
         startLayer.add(start_bgLabel);
         start_bgLabel.setBounds(0, 0, 1270, 700);
 
-        start_logoLabel.setIcon(new ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
+        start_logoLabel.setIcon(new ImageIcon(getClass().getResource("/img/logo.png")));
         startLayer.setLayer(start_logoLabel, JLayeredPane.MODAL_LAYER);
         startLayer.add(start_logoLabel);
         start_logoLabel.setBounds(335, 80, 600, 333);
@@ -350,15 +351,25 @@ public class Poker extends JFrame {
         gameLayer.add(game_pasarBut);
         game_pasarBut.setBounds(1012, 620, 126, 31);
         
-        gameLayer.setLayer(game_cartasMostrar1, JLayeredPane.MODAL_LAYER);
+        gameLayer.setLayer(game_cartasMostrar1, JLayeredPane.POPUP_LAYER);
         gameLayer.add(game_cartasMostrar1);
-        game_cartasMostrar1.setBounds(560, 425, 100, 154);
+        game_cartasMostrar1.setBounds(560, 455, 100, 154);
 		game_cartasMostrar1.setVisible(false);
         
-        gameLayer.setLayer(game_cartasMostrar2, JLayeredPane.MODAL_LAYER + 1);
+        gameLayer.setLayer(game_cartasMostrar2, JLayeredPane.POPUP_LAYER + 1);
         gameLayer.add(game_cartasMostrar2);
         game_cartasMostrar2.setBounds(590, 450, 150, 200);
 		game_cartasMostrar2.setVisible(false);
+		
+		gameLayer.setLayer(game_cartasBotMostrar1, JLayeredPane.POPUP_LAYER);
+        gameLayer.add(game_cartasBotMostrar1);
+        game_cartasBotMostrar1.setBounds(560, 30, 100, 154);
+		game_cartasBotMostrar1.setVisible(false);
+        
+        gameLayer.setLayer(game_cartasBotMostrar2, JLayeredPane.POPUP_LAYER + 1);
+        gameLayer.add(game_cartasBotMostrar2);
+        game_cartasBotMostrar2.setBounds(590, 25, 150, 200);
+		game_cartasBotMostrar2.setVisible(false);
         
         game_mostrarBut.setText("MOSTRAR CARTAS");
         game_mostrarBut.addActionListener(new ActionListener() {
@@ -423,11 +434,19 @@ public class Poker extends JFrame {
         pack();
     }
 
+    /**
+     * Botón de nueva partida
+     * @param evt
+     */
     private void start_nuevaButActionPerformed(ActionEvent evt) {
     	startLayer.setVisible(false);
     	nuevaPartida();
     }
     
+    /**
+     * Botón de reglas
+     * @param evt
+     */
     private void start_reglasButActionPerformed(ActionEvent evt) {
         URL url=null;
         try {
@@ -444,31 +463,63 @@ public class Poker extends JFrame {
         }
     }
     
+    /**
+     * Botón de apostar
+     * @param evt
+     */
     private void game_apostarButActionPerformed(ActionEvent evt) {
     	// TODO add your handling code here:
-    	Carta cartaPrueba = new Carta(new ImageIcon(getClass().getResource("/img/cards/AS.png")), 1, 1);
-    	cartaPrueba.setPreferredSize(new Dimension(100, 154));
-    	cartaPrueba.showCard(1);
-    	gameLayer.setLayer(cartaPrueba, JLayeredPane.DRAG_LAYER);
-    	gameLayer.add(cartaPrueba);
-    	cartaPrueba.setBounds(500, 394, 100, 154);
-
     	repaint();
     	System.out.println("apostar");
     	
     }
 
+    /**
+     * Botón de pasar, determina el flujo del juego
+     * @param evt
+     */
     private void game_pasarButActionPerformed(ActionEvent evt) {
-    	endLayer.setVisible(true);
+    	switch (estadoDelJuego) {
+    	case 0: // Estado inicial, las cartas están tapadas, las cartas se destapan
+    		mostrarCartasMesa();
+    		break;
+    	case 1: // Las 3 cartas están destapadas, Se destapa la 4ta carta
+    	case 2: // 4 cartas están destapadas, se destapa la última carta
+    		agregarCartaMesa();
+    		mostrarCartasMesa();
+    		break;
+    	case 3: // Las 5 cartas están destapadas, el jugador puede apostar antes de
+    		    // que se revelen las cartas del oponente
+    		game_cartasBotMostrar1.setVisible(true);
+        	game_cartasBotMostrar2.setVisible(true);
+        	game_p1TableCards.setVisible(false);
+        	game_cartasMostrar1.setVisible(true);
+        	game_cartasMostrar2.setVisible(true);
+        	game_p2TableCards.setVisible(false);
+        	mostrarCartas = true;
+    		break;
+    	case 4: // Se termina la partida
+    		// TODO: el jugador gana o pierde, si se queda sin dinero pierde definitivamente
+        	endLayer.setVisible(true);
+        	break;
+    	}
+    	estadoDelJuego++;
+    	repaint();
     }
     
+    /**
+     * Botón de mostrar las cartas
+     * @param evt
+     */
     private void game_mostrarButActionPerformed(ActionEvent evt) {
     	if (mostrarCartas) {
+    		game_mostrarBut.setText("MOSTRAR CARTAS");
     		game_cartasMostrar1.setVisible(false);
         	game_cartasMostrar2.setVisible(false);
         	game_p2TableCards.setVisible(true);
         	mostrarCartas = false;
     	} else {
+    		game_mostrarBut.setText("OCULTAR CARTAS");
     		game_cartasMostrar1.setVisible(true);
         	game_cartasMostrar2.setVisible(true);
         	game_p2TableCards.setVisible(false);
@@ -489,14 +540,27 @@ public class Poker extends JFrame {
     }
     
     private void nuevaRonda() {
-    	mostrarCartas = false;
+    	game_cartasBotMostrar1.setVisible(false);
+    	game_cartasBotMostrar2.setVisible(false);
+    	game_p1TableCards.setVisible(true);
+    	mostrarCartas = true;
+    	game_mostrarButActionPerformed(null);
+    	for (int i=0; i<cartasMesa; i++) {
+        	gameLayer.remove(game_tableCards.get(i));
+    	}
+    	game_tableCards.clear();
     	cartasMesa = 0;
     	estadoDelJuego = 0;
     	control.repartirCartas();
     	control.getCartas(1).get(0).showCard(1);
     	game_cartasMostrar1.setIcon(control.getCartas(1).get(0).getIcon());
-    	control.getCartas(1).get(1).showCard(2);
+    	control.getCartas(1).get(1).showCard(1);
     	game_cartasMostrar2.setIcon(control.getCartas(1).get(1).getIcon());
+    	
+    	control.getCartas(0).get(0).showCard(1);
+    	game_cartasBotMostrar1.setIcon(control.getCartas(0).get(0).getIcon());
+    	control.getCartas(0).get(1).showCard(1);
+    	game_cartasBotMostrar2.setIcon(control.getCartas(0).get(1).getIcon());
     	game_p1TableCards.setVisible(true);
     	game_p2TableCards.setVisible(true);
     	for (int i=0; i<3; i++) {
@@ -508,12 +572,26 @@ public class Poker extends JFrame {
     private void agregarCartaMesa() {
     	Carta nuevaCartaMesa = control.repartirCartaMesa();
     	game_tableCards.add(nuevaCartaMesa);
-		gameLayer.setLayer(game_tableCards.get(cartasMesa), JLayeredPane.POPUP_LAYER+1);
+		gameLayer.setLayer(game_tableCards.get(cartasMesa), JLayeredPane.POPUP_LAYER+10);
 		gameLayer.add(game_tableCards.get(cartasMesa));
 		game_tableCards.get(cartasMesa).setBounds(360 + (cartasMesa*110), 180, 100, 154);
 		cartasMesa +=1;
 		repaint();
 		return;
+    }
+    
+    private void mostrarCartasMesa() {
+    	switch (estadoDelJuego) {
+    	case 0:
+    		for (int i=0; i<3; i++) {
+        		game_tableCards.get(i).showCard(1);
+        	}
+    		break;
+    	case 1:
+    	case 2:
+    		System.out.println(cartasMesa);
+    		game_tableCards.get(cartasMesa-1).showCard(1);
+    	}
     }
     
     
@@ -559,6 +637,8 @@ public class Poker extends JFrame {
     private JButton game_pasarBut;
     private JLabel game_cartasMostrar1;
     private JLabel game_cartasMostrar2;
+    private JLabel game_cartasBotMostrar1;
+    private JLabel game_cartasBotMostrar2;
     private JButton game_mostrarBut;
     private JLabel game_tableLabel;
     private JLayeredPane mainPane;
