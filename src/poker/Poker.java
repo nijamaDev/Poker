@@ -1,8 +1,8 @@
 /**
   Archivo: Poker.java
-  Fecha creaciï¿½n:		2019/08/01
-  ï¿½ltima modificaciï¿½n:	2019/08/14
-  Versiï¿½n: 0.4
+  Fecha creación:		2019/08/01
+  Última modificación:	2019/08/14
+  Versión: 0.8
   Licencia: GPL
 
   Autores:	Nicolas Jaramillo Mayor        1840558
