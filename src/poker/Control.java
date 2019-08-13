@@ -52,4 +52,12 @@ public class Control {
     public ArrayList<Carta> getCartas(int quien){
     	return jugadores.get(quien).getCartasJugador();
     }
+    
+    public Cartera getCartera(int quien) {
+    	return jugadores.get(quien).getCartera();
+    }
+    
+    public int ganador(ArrayList<Carta> cartasMesa) {
+    	return ganador.quienGana(cartasMesa, jugadores);
+    }
 }

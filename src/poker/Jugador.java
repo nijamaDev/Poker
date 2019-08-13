@@ -29,6 +29,7 @@ public class Jugador {
 	
 	public Jugador(int puesto) {
 		this.puesto = puesto;
+		cartera = new Cartera(500);
 	}
 	
 	/**

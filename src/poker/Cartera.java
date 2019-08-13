@@ -39,7 +39,7 @@ public class Cartera {
 	 *
 	 * @param suma the suma
 	 */
-	public void addDinero(int suma) {
+	private void addDinero(int suma) {
 		dinero += suma;
 	}
 	
@@ -49,7 +49,8 @@ public class Cartera {
 	 * @param suma the apuesta
 	 */
 	public void addApuesta(int suma) {
-		apuesta += suma;
+		dinero += -suma;
+		apuesta += 2*suma;
 	}
 	
 	/**
@@ -79,7 +80,7 @@ public class Cartera {
 	public boolean puedeApostar(int apuesta) {
 		if (dinero < apuesta)
 			return false;
-		else return true;
+		return true;
 	}
 	
 	public void ganador() {

@@ -25,6 +25,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
@@ -321,7 +322,7 @@ public class Poker extends JFrame {
         game_apuestaLabel3.setFont(new Font(Font.DIALOG, Font.BOLD, 26));
         game_apuestaLabel3.setForeground(new Color(244,244,244));
         game_apuestaLabel3.setHorizontalAlignment(SwingConstants.CENTER);
-        gameLayer.setLayer(game_apuestaLabel3, JLayeredPane.MODAL_LAYER);
+        gameLayer.setLayer(game_apuestaLabel3, JLayeredPane.MODAL_LAYER + 1);
         gameLayer.add(game_apuestaLabel3);
         game_apuestaLabel3.setBounds(999, 555, 150, 50);
 
@@ -351,24 +352,24 @@ public class Poker extends JFrame {
         gameLayer.add(game_pasarBut);
         game_pasarBut.setBounds(1012, 620, 126, 31);
         
-        gameLayer.setLayer(game_cartasMostrar1, JLayeredPane.POPUP_LAYER);
+        gameLayer.setLayer(game_cartasMostrar1, JLayeredPane.POPUP_LAYER + 2);
         gameLayer.add(game_cartasMostrar1);
         game_cartasMostrar1.setBounds(560, 455, 100, 154);
 		game_cartasMostrar1.setVisible(false);
         
-        gameLayer.setLayer(game_cartasMostrar2, JLayeredPane.POPUP_LAYER + 1);
+        gameLayer.setLayer(game_cartasMostrar2, JLayeredPane.POPUP_LAYER + 3);
         gameLayer.add(game_cartasMostrar2);
-        game_cartasMostrar2.setBounds(590, 450, 150, 200);
+        game_cartasMostrar2.setBounds(590, 470, 100, 154);
 		game_cartasMostrar2.setVisible(false);
 		
-		gameLayer.setLayer(game_cartasBotMostrar1, JLayeredPane.POPUP_LAYER);
+		gameLayer.setLayer(game_cartasBotMostrar1, JLayeredPane.POPUP_LAYER + 2);
         gameLayer.add(game_cartasBotMostrar1);
-        game_cartasBotMostrar1.setBounds(560, 30, 100, 154);
+        game_cartasBotMostrar1.setBounds(560, 5, 100, 154);
 		game_cartasBotMostrar1.setVisible(false);
         
-        gameLayer.setLayer(game_cartasBotMostrar2, JLayeredPane.POPUP_LAYER + 1);
+        gameLayer.setLayer(game_cartasBotMostrar2, JLayeredPane.POPUP_LAYER + 3);
         gameLayer.add(game_cartasBotMostrar2);
-        game_cartasBotMostrar2.setBounds(590, 25, 150, 200);
+        game_cartasBotMostrar2.setBounds(590, 20, 100, 154);
 		game_cartasBotMostrar2.setVisible(false);
         
         game_mostrarBut.setText("MOSTRAR CARTAS");
@@ -468,10 +469,16 @@ public class Poker extends JFrame {
      * @param evt
      */
     private void game_apostarButActionPerformed(ActionEvent evt) {
-    	// TODO add your handling code here:
-    	repaint();
-    	System.out.println("apostar");
-    	
+    	int text = 0;
+    	try {
+    		text = Integer.valueOf(game_apuestaText.getText());
+    	} catch(Exception e) {
+    		return;
+    	}
+    	if (!control.getCartera(1).puedeApostar(text))
+    		return;
+    	control.getCartera(1).addApuesta(text);
+    	printDinero();
     }
 
     /**
@@ -499,8 +506,22 @@ public class Poker extends JFrame {
         	mostrarCartas = true;
     		break;
     	case 4: // Se termina la partida
-    		// TODO: el jugador gana o pierde, si se queda sin dinero pierde definitivamente
-        	endLayer.setVisible(true);
+    		//  el jugador gana o pierde, si se queda sin dinero pierde definitivamente
+    		int ganador = control.ganador(game_tableCards);
+    		if (ganador == 1) {
+    			JOptionPane.showMessageDialog(this, "GANADOR\n"
+    					+ "Has ganado: " + control.getCartera(0).getApuesta());
+    		} else {
+    			JOptionPane.showMessageDialog(this, "Has perdido.");
+    		}
+    		control.getCartera(ganador).ganador();
+    		if (control.getCartera(1).getDinero() <= 0) {
+    			JOptionPane.showMessageDialog(this, "¿No tienes dinero? ¡Fuera de aquí!");
+            	endLayer.setVisible(true);
+    		} else {
+    			nuevaRonda();
+    			return;
+    		}
         	break;
     	}
     	estadoDelJuego++;
@@ -566,13 +587,14 @@ public class Poker extends JFrame {
     	for (int i=0; i<3; i++) {
     		agregarCartaMesa();
     	}
-    	repaint();
+    	control.getCartera(1).addApuesta(10); //apuesta inicial
+    	printDinero();
     }
     
     private void agregarCartaMesa() {
     	Carta nuevaCartaMesa = control.repartirCartaMesa();
     	game_tableCards.add(nuevaCartaMesa);
-		gameLayer.setLayer(game_tableCards.get(cartasMesa), JLayeredPane.POPUP_LAYER+10);
+		gameLayer.setLayer(game_tableCards.get(cartasMesa), JLayeredPane.POPUP_LAYER+1);
 		gameLayer.add(game_tableCards.get(cartasMesa));
 		game_tableCards.get(cartasMesa).setBounds(360 + (cartasMesa*110), 180, 100, 154);
 		cartasMesa +=1;
@@ -592,6 +614,14 @@ public class Poker extends JFrame {
     		System.out.println(cartasMesa);
     		game_tableCards.get(cartasMesa-1).showCard(1);
     	}
+    }
+    
+    private void printDinero() {
+    	String text = Integer.toString(control.getCartera(1).getDinero());
+    	game_dineroLabel3.setText(text);
+    	text = Integer.toString(control.getCartera(1).getApuesta());
+    	game_apuestaLabel3.setText(text);
+    	repaint();
     }
     
     

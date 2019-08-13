@@ -60,8 +60,8 @@ public class Ganador {
 			for (int j=i+1; j<7; j++) {
 				cartas5.clear();
 				cartas5.addAll(cartasEvaluar);
-				cartas5.remove(i);
 				cartas5.remove(j);
+				cartas5.remove(i);
 				puntajeManos.add(evaluarMano(cartas5));
 			}
 		}
