@@ -1,8 +1,8 @@
 /**
   Archivo: Poker.java
-  Fecha creación:		2019/08/01
-  Última modificación:	2019/08/14
-  Versión: 0.8
+  Fecha creaciÃ³n:		2019/08/01
+  Ãšltima modificaciÃ³n:	2019/08/14
+  VersiÃ³n: 0.8
   Licencia: GPL
 
   Autores:	Nicolas Jaramillo Mayor        1840558
@@ -435,7 +435,7 @@ public class Poker extends JFrame {
     }
 
     /**
-     * Botón de nueva partida
+     * Botï¿½n de nueva partida
      * @param evt
      */
     private void start_nuevaButActionPerformed(ActionEvent evt) {
@@ -444,7 +444,7 @@ public class Poker extends JFrame {
     }
     
     /**
-     * Botón de reglas
+     * Botï¿½n de reglas
      * @param evt
      */
     private void start_reglasButActionPerformed(ActionEvent evt) {
@@ -464,7 +464,7 @@ public class Poker extends JFrame {
     }
     
     /**
-     * Botón de apostar
+     * Botï¿½n de apostar
      * @param evt
      */
     private void game_apostarButActionPerformed(ActionEvent evt) {
@@ -475,20 +475,20 @@ public class Poker extends JFrame {
     }
 
     /**
-     * Botón de pasar, determina el flujo del juego
+     * Botï¿½n de pasar, determina el flujo del juego
      * @param evt
      */
     private void game_pasarButActionPerformed(ActionEvent evt) {
     	switch (estadoDelJuego) {
-    	case 0: // Estado inicial, las cartas están tapadas, las cartas se destapan
+    	case 0: // Estado inicial, las cartas estï¿½n tapadas, las cartas se destapan
     		mostrarCartasMesa();
     		break;
-    	case 1: // Las 3 cartas están destapadas, Se destapa la 4ta carta
-    	case 2: // 4 cartas están destapadas, se destapa la última carta
+    	case 1: // Las 3 cartas estï¿½n destapadas, Se destapa la 4ta carta
+    	case 2: // 4 cartas estï¿½n destapadas, se destapa la ï¿½ltima carta
     		agregarCartaMesa();
     		mostrarCartasMesa();
     		break;
-    	case 3: // Las 5 cartas están destapadas, el jugador puede apostar antes de
+    	case 3: // Las 5 cartas estï¿½n destapadas, el jugador puede apostar antes de
     		    // que se revelen las cartas del oponente
     		game_cartasBotMostrar1.setVisible(true);
         	game_cartasBotMostrar2.setVisible(true);
@@ -508,7 +508,7 @@ public class Poker extends JFrame {
     }
     
     /**
-     * Botón de mostrar las cartas
+     * Botï¿½n de mostrar las cartas
      * @param evt
      */
     private void game_mostrarButActionPerformed(ActionEvent evt) {

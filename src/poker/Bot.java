@@ -1,8 +1,8 @@
 /**
   Archivo: Bot.java
-  Fecha creación:		2019/08/01
-  Última modificación:	2019/08/14
-  Versión: 0.8
+  Fecha creaciÃ³n:		2019/08/01
+  Ãšltima modificaciÃ³n:	2019/08/14
+  VersiÃ³n: 0.8
   Licencia: GPL
 
   Autores:	Nicolas Jaramillo Mayor        1840558
