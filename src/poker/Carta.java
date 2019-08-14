@@ -2,12 +2,14 @@
   Archivo: Carta.java
   Fecha creación:		2019/08/01
   Última modificación:	2019/08/14
-  Versión: 0.8
+  Versión: 1.0
   Licencia: GPL
 
   Autores:	Nicolas Jaramillo Mayor        1840558
+  			Crhistian Alexander Garcia	   1832124
 
   Email:	nicolas.jaramillo@correounivalle.edu.co
+  			garcia.crhistian@correounivalle.edu.co
 
 */
 
@@ -42,8 +44,8 @@ public class Carta extends JLabel{
     
     public Carta(Carta card){
         this.front = card.front;
-        this.value = card.value; // 1 = As, 2 = 2, ... 11 = J, 12 = Q, 13 = K
-        this.type = card.type;  // 1 = Picas, 2 = Corazones, 3 = Tréboles, 4 = Diamantes
+        this.value = card.value; // 0 = 2, 1 = 3 ... 9 = J, 10 = Q, 11 = K, 12 = As
+        this.type = card.type;  // 0 = Picas, 1 = Corazones, 2 = Tréboles, 3 = Diamantes
         setIcon(back);
     }
     

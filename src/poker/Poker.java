@@ -2,12 +2,14 @@
   Archivo: Poker.java
   Fecha creación:		2019/08/01
   Última modificación:	2019/08/14
-  Versión: 0.8
+  Versión: 1.0
   Licencia: GPL
 
   Autores:	Nicolas Jaramillo Mayor        1840558
+  			Crhistian Alexander Garcia	   1832124
 
   Email:	nicolas.jaramillo@correounivalle.edu.co
+  			garcia.crhistian@correounivalle.edu.co
 
 */
 package poker;
@@ -436,7 +438,7 @@ public class Poker extends JFrame {
     }
 
     /**
-     * Bot�n de nueva partida
+     * Botón de nueva partida
      * @param evt
      */
     private void start_nuevaButActionPerformed(ActionEvent evt) {
@@ -445,7 +447,7 @@ public class Poker extends JFrame {
     }
     
     /**
-     * Bot�n de reglas
+     * Botón de reglas
      * @param evt
      */
     private void start_reglasButActionPerformed(ActionEvent evt) {
@@ -465,7 +467,7 @@ public class Poker extends JFrame {
     }
     
     /**
-     * Bot�n de apostar
+     * Botón de apostar
      * @param evt
      */
     private void game_apostarButActionPerformed(ActionEvent evt) {
@@ -482,7 +484,7 @@ public class Poker extends JFrame {
     }
 
     /**
-     * Bot�n de pasar, determina el flujo del juego
+     * Botón de pasar, determina el flujo del juego
      * @param evt
      */
     private void game_pasarButActionPerformed(ActionEvent evt) {
@@ -504,10 +506,7 @@ public class Poker extends JFrame {
         	game_cartasMostrar2.setVisible(true);
         	game_p2TableCards.setVisible(false);
         	mostrarCartas = true;
-    		break;
-    	case 4: // Se termina la partida
-    		//  el jugador gana o pierde, si se queda sin dinero pierde definitivamente
-    		int ganador = control.ganador(game_tableCards);
+        	int ganador = control.ganador(game_tableCards);
     		if (ganador == 1) {
     			JOptionPane.showMessageDialog(this, "GANADOR\n"
     					+ "Has ganado: " + control.getCartera(0).getApuesta());
@@ -522,14 +521,14 @@ public class Poker extends JFrame {
     			nuevaRonda();
     			return;
     		}
-        	break;
+    		break;
     	}
     	estadoDelJuego++;
     	repaint();
     }
     
     /**
-     * Bot�n de mostrar las cartas
+     * Botón de mostrar las cartas
      * @param evt
      */
     private void game_mostrarButActionPerformed(ActionEvent evt) {
@@ -561,6 +560,7 @@ public class Poker extends JFrame {
     }
     
     private void nuevaRonda() {
+    	control.nuevaRonda();
     	game_cartasBotMostrar1.setVisible(false);
     	game_cartasBotMostrar2.setVisible(false);
     	game_p1TableCards.setVisible(true);
