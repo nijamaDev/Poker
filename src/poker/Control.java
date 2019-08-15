@@ -50,7 +50,7 @@ public class Control {
      * Nueva ronda.
      */
     public void nuevaRonda() {
-    	baraja.nuevaBaraja();
+    	baraja = new Baraja();
     	baraja.revolver();
 		jugadores.get(0).getCartasJugador().clear();
 		jugadores.get(1).getCartasJugador().clear();
