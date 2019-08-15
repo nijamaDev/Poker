@@ -17,41 +17,53 @@ package poker;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+// TODO: Auto-generated Javadoc
 /**
- * Determina al ganador de la ronda
+ * The class Ganador. Determina al ganador de la ronda.
  */
 public class Ganador {
+	
+	/** The straight flush types. */
 	private final int[] straight_flush_types = {4, 5, 8};
 	                 // 4 = STRAIGHT, 5 = FLUSH, 8 = STRAIGHT_FLUSH
 	
-	private final int[][] repeated_types = {
+	/** The repeated types. */
+                 	private final int[][] repeated_types = {
 	        {0},     // 0 = HIGH_CARD,
 	        {1, 2},  // 1 = ONE_PAIR, 2 = TWO_PAIR,
 	        {3, 6},	 // 3 = THREE_OF_A_KIND, 6 = FULL_HOUSE,
 	        {7}      // 7 = FOUR_OF_A_KIND,
 	    };
-	/**
-	 * Los tipos ordenados en valor de la jugada:
-	    0 = HIGH_CARD,
-        1 = ONE_PAIR,
-        2 = TWO_PAIR,
-        3 = THREE_OF_A_KIND,
-        4 = STRAIGHT,
-        5 = FLUSH,
-        6 = FULL_HOUSE,
-        7 = FOUR_OF_A_KIND,
-        8 = STRAIGHT_FLUSH
-	 */
+	
+	/** Los tipos ordenados en valor de la jugada:
+	 *  	    0 = HIGH_CARD, 
+	 *          1 = ONE_PAIR,
+	 *          2 = TWO_PAIR,
+	 *          3 = THREE_OF_A_KIND,
+	 *          4 = STRAIGHT,
+	 *          5 = FLUSH,
+	 *          6 = FULL_HOUSE,
+	 *          7 = FOUR_OF_A_KIND,
+	 *          8 = STRAIGHT_FLUSH. */
 	private final int[][] indices = new int[5][2];
+	
+	/** The val cartas. */
 	private final int[] valCartas = new int[13]; // cada posición representa la cantidad de cartas con ese valor
+	
+	/** The mazo. */
 	private final int[] mazo = new int[4];
+	
+	/** The is straight. */
 	private boolean isStraight = false;
+	
+	/** The is flush. */
 	private boolean isFlush = false;
 			
 	/**
-	 * Retorna el la posición del ganador
-	 * @param cartasMesa
-	 * @param jugadores
+	 * Retorna el la posición del ganador.
+	 *
+	 * @param cartasMesa the cartas mesa
+	 * @param jugadores the jugadores
 	 * @return ganador
 	 */
 	public int quienGana(ArrayList<Carta> cartasMesa, ArrayList<Jugador> jugadores) {
@@ -78,9 +90,10 @@ public class Ganador {
 	
 	/**
 	 *  Retorna el puntaje de la mejor combinación de 5 cartas de un jugador
-	 *  Recibe 7 cartas
-	 * @param cartasEvaluar
-	 * @return
+	 *  Recibe 7 cartas.
+	 *
+	 * @param cartasEvaluar the cartas evaluar
+	 * @return the int
 	 */
 	private int evaluar7Cartas(ArrayList<Carta> cartasEvaluar) {
 		ArrayList<Integer> puntajeManos = new ArrayList<Integer> ();
@@ -105,7 +118,8 @@ public class Ganador {
 	
 	/**
 	 * Le da un valor numérico a un grupo de 5 cartas de poker.
-	 * @param cartas
+	 *
+	 * @param cartas the cartas
 	 * @return valor de la mano
 	 */
 	private int evaluarMano(ArrayList<Carta> cartas) {
@@ -145,8 +159,9 @@ public class Ganador {
 	}
 	
 	/**
-	 * Ordena la matriz de indices de las cartas que más se repiten a las que menos
-	 * @param i
+	 * Ordena la matriz de indices de las cartas que más se repiten a las que menos.
+	 *
+	 * @param num the num
 	 */
 	private void indicesOrdenar(int num) {
 		int i = num;
@@ -162,8 +177,9 @@ public class Ganador {
 	 * si hay un AS y el contador es 4, entonces es porque las cartas son:
 	 * As, 5, 4, 3, 2 (straight to ace)
 	 * La función comprueba si este es el caso y reacomoda los indices de las cartas para que sea:
-	 * 5, 4, 3, 2, As
-	 * @param contador
+	 * 5, 4, 3, 2, As.
+	 *
+	 * @param contador the contador
 	 * @return true si hay un straight to ace
 	 */
 	private boolean straight5toAce(int contador) { 
@@ -178,6 +194,11 @@ public class Ganador {
 		return straight5toAce;
 	}
 	
+	/**
+	 * Calcular mano.
+	 *
+	 * @return the int
+	 */
 	private int calcularMano() {
 		int jugada;
 		if (isStraight) {
@@ -192,6 +213,12 @@ public class Ganador {
 		return valorMano(jugada);
 	}
 	
+	/**
+	 * Valor mano. Le da un valor numerico a cada jugada
+	 *
+	 * @param jugada the jugada
+	 * @return the int
+	 */
 	private int valorMano(int jugada) {
 		int valorMano = jugada;
 		int i = 0;
@@ -207,9 +234,10 @@ public class Ganador {
 	}
 	
 	/**
-	 * Retorna la mano ganadora del jugador que ganó
-	 * @param ganador
-	 * @return Cartas ganadoras
+	 * Mano ganadora.
+	 *
+	 * @param ganador the ganador
+	 * @return the array list
 	 */
 	public ArrayList<Carta> manoGanadora(Jugador ganador){
 		return null;

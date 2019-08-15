@@ -41,13 +41,14 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 
+// TODO: Auto-generated Javadoc
 /**
- *
+ * The Class Poker. Controla la parte Grafica del Juego
  */
 public class Poker extends JFrame {
 
     /**
-     * Creates new form Poker
+     * Creates new form Poker.
      */
     public Poker() {
         initComponents();
@@ -438,8 +439,9 @@ public class Poker extends JFrame {
     }
 
     /**
-     * Botón de nueva partida
-     * @param evt
+     * Botón de nueva partida.
+     *
+     * @param evt the evt
      */
     private void start_nuevaButActionPerformed(ActionEvent evt) {
     	startLayer.setVisible(false);
@@ -447,8 +449,9 @@ public class Poker extends JFrame {
     }
     
     /**
-     * Botón de reglas
-     * @param evt
+     * Botón de reglas.
+     *
+     * @param evt the evt
      */
     private void start_reglasButActionPerformed(ActionEvent evt) {
         URL url=null;
@@ -467,8 +470,9 @@ public class Poker extends JFrame {
     }
     
     /**
-     * Botón de apostar
-     * @param evt
+     * Botón de apostar.
+     *
+     * @param evt the evt
      */
     private void game_apostarButActionPerformed(ActionEvent evt) {
     	int text = 0;
@@ -484,8 +488,9 @@ public class Poker extends JFrame {
     }
 
     /**
-     * Botón de pasar, determina el flujo del juego
-     * @param evt
+     * Botón de pasar, determina el flujo del juego.
+     *
+     * @param evt the evt
      */
     private void game_pasarButActionPerformed(ActionEvent evt) {
     	switch (estadoDelJuego) {
@@ -528,8 +533,9 @@ public class Poker extends JFrame {
     }
     
     /**
-     * Botón de mostrar las cartas
-     * @param evt
+     * Botón de mostrar las cartas.
+     *
+     * @param evt the evt
      */
     private void game_mostrarButActionPerformed(ActionEvent evt) {
     	if (mostrarCartas) {
@@ -549,16 +555,27 @@ public class Poker extends JFrame {
     	repaint();
     }
     
+    /**
+     * End aceptar but action performed.
+     *
+     * @param evt the evt
+     */
     private void end_aceptarButActionPerformed(ActionEvent evt) {
     	endLayer.setVisible(false);
     	startLayer.setVisible(true);
     }
     
+    /**
+     * Nueva partida.
+     */
     private void nuevaPartida() {
     	control = new Control();
     	nuevaRonda();
     }
     
+    /**
+     * Nueva ronda.
+     */
     private void nuevaRonda() {
     	control.nuevaRonda();
     	game_cartasBotMostrar1.setVisible(false);
@@ -591,6 +608,9 @@ public class Poker extends JFrame {
     	printDinero();
     }
     
+    /**
+     * Agregar carta mesa.
+     */
     private void agregarCartaMesa() {
     	Carta nuevaCartaMesa = control.repartirCartaMesa();
     	game_tableCards.add(nuevaCartaMesa);
@@ -602,6 +622,9 @@ public class Poker extends JFrame {
 		return;
     }
     
+    /**
+     * Mostrar cartas mesa.
+     */
     private void mostrarCartasMesa() {
     	switch (estadoDelJuego) {
     	case 0:
@@ -616,6 +639,9 @@ public class Poker extends JFrame {
     	}
     }
     
+    /**
+     * Prints the dinero.
+     */
     private void printDinero() {
     	String text = Integer.toString(control.getCartera(1).getDinero());
     	game_dineroLabel3.setText(text);
@@ -625,58 +651,161 @@ public class Poker extends JFrame {
     }
     
     
+    /** The mostrar cartas. */
     // Variables declaration
     private boolean mostrarCartas;
+    
+    /** The estado del juego. */
     private int estadoDelJuego;
+    
+    /** The cartas mesa. */
     private int cartasMesa;
+    
+    /** The control. */
     private Control control;
+    
+    /** The end layer. */
     private JLayeredPane endLayer;
+    
+    /** The end aceptar but. */
     private JButton end_aceptarBut;
+    
+    /** The end bg label. */
     private JLabel end_bgLabel;
+    
+    /** The end game over label. */
     private JLabel end_gameOverLabel;
+    
+    /** The end salir but. */
     private JButton end_salirBut;
+    
+    /** The game layer. */
     private JLayeredPane gameLayer;
+    
+    /** The game apostar but. */
     private JButton game_apostarBut;
+    
+    /** The game apuesta label 1. */
     private JLabel game_apuestaLabel1;
+    
+    /** The game apuesta label 2. */
     private JLabel game_apuestaLabel2;
+    
+    /** The game apuesta label 3. */
     private JLabel game_apuestaLabel3;
+    
+    /** The game apuesta text. */
     private JTextField game_apuestaText;
+    
+    /** The game chair 1 label. */
     private JLabel game_chair1Label;
+    
+    /** The game chair 2 label. */
     private JLabel game_chair2Label;
+    
+    /** The game chair 3 label. */
     private JLabel game_chair3Label;
+    
+    /** The game chair 4 label. */
     private JLabel game_chair4Label;
+    
+    /** The game chair 5 label. */
     private JLabel game_chair5Label;
+    
+    /** The game chair 6 label. */
     private JLabel game_chair6Label;
+    
+    /** The game dinero label 1. */
     private JLabel game_dineroLabel1;
+    
+    /** The game dinero label 2. */
     private JLabel game_dineroLabel2;
+    
+    /** The game dinero label 3. */
     private JLabel game_dineroLabel3;
+    
+    /** The game bg label. */
     private JLabel game_bgLabel;
+    
+    /** The game p 1 pane. */
     private JLayeredPane game_p1Pane;
+    
+    /** The game p 2 pane. */
     private JLayeredPane game_p2Pane;
+    
+    /** The game p 3 pane. */
     private JLayeredPane game_p3Pane;
+    
+    /** The game p 4 pane. */
     private JLayeredPane game_p4Pane;
+    
+    /** The game p 5 pane. */
     private JLayeredPane game_p5Pane;
+    
+    /** The game p 6 pane. */
     private JLayeredPane game_p6Pane;
+    
+    /** The game p 1 table cards. */
     private JLabel game_p1TableCards;
+    
+    /** The game p 2 table cards. */
     private JLabel game_p2TableCards;
+    
+    /** The game p 3 table cards. */
     private JLabel game_p3TableCards;
+    
+    /** The game p 4 table cards. */
     private JLabel game_p4TableCards;
+    
+    /** The game p 5 table cards. */
     private JLabel game_p5TableCards;
+    
+    /** The game p 6 table cards. */
     private JLabel game_p6TableCards;
+    
+    /** The game table cards. */
     private ArrayList<Carta> game_tableCards;
+    
+    /** The game pasar but. */
     private JButton game_pasarBut;
+    
+    /** The game cartas mostrar 1. */
     private JLabel game_cartasMostrar1;
+    
+    /** The game cartas mostrar 2. */
     private JLabel game_cartasMostrar2;
+    
+    /** The game cartas bot mostrar 1. */
     private JLabel game_cartasBotMostrar1;
+    
+    /** The game cartas bot mostrar 2. */
     private JLabel game_cartasBotMostrar2;
+    
+    /** The game mostrar but. */
     private JButton game_mostrarBut;
+    
+    /** The game table label. */
     private JLabel game_tableLabel;
+    
+    /** The main pane. */
     private JLayeredPane mainPane;
+    
+    /** The start layer. */
     private JLayeredPane startLayer;
+    
+    /** The start bg label. */
     private JLabel start_bgLabel;
+    
+    /** The start logo label. */
     private JLabel start_logoLabel;
+    
+    /** The start nueva but. */
     private JButton start_nuevaBut;
+    
+    /** The start reglas but. */
     private JButton start_reglasBut;
+    
+    /** The start salir but. */
     private JButton start_salirBut;
     // End of variables declaration
 }

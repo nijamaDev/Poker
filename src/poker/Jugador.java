@@ -19,16 +19,25 @@ import java.util.ArrayList;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class Jugador.
+ * The Class Jugador. Define las caracteristicas de un jugador
  */
 public class Jugador {
 	
 	
 	/** The Cartas del jugador. */
 	protected ArrayList<Carta> CartasDelJugador = new ArrayList<Carta>();
+	
+	/** The cartera. */
 	private Cartera cartera;
+	
+	/** The puesto. */
 	protected int puesto;
 	
+	/**
+	 * Instantiates a new jugador.
+	 *
+	 * @param puesto the puesto
+	 */
 	public Jugador(int puesto) {
 		this.puesto = puesto;
 		cartera = new Cartera(500);
@@ -62,7 +71,7 @@ public class Jugador {
 	}
 	
 	/**
-	 * Devuelve la cartera
+	 * Devuelve la cartera.
 	 *
 	 * @return la cartera del jugador
 	 */
@@ -71,7 +80,8 @@ public class Jugador {
 	}
 	
 	/**
-	 * Devuelve el puesto en el que est� sentado el jugador
+	 * Devuelve el puesto en el que est� sentado el jugador.
+	 *
 	 * @return el puesto
 	 */
 	public int getPuesto() {

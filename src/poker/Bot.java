@@ -17,9 +17,15 @@ package poker;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class Bot.
+ * The Class Bot. Simula ser un jugador
  */
 public class Bot extends Jugador{
+	
+	/**
+	 * Instantiates a new bot.
+	 *
+	 * @param puesto the puesto
+	 */
 	public Bot(int puesto) {
 		super(puesto);
 	}

@@ -14,13 +14,16 @@
 */
 package poker;
 
+// TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class Main. Ejecuta el juego
  */
 public class Main {
 
 	/**
-	 * @param args
+	 * The main method.
+	 *
+	 * @param args the arguments
 	 */
 	public static void main(String[] args) {
         /* Set the Nimbus look and feel */

@@ -17,10 +17,11 @@ package poker;
 
 // TODO: Auto-generated Javadoc
 /**
- * Maneja la cantidad de dinero del jugador y las apuestas.
+ * The class Cartera. Maneja la cantidad de dinero del jugador y las apuestas.
  */
 public class Cartera {
 	
+	/** The apuesta. */
 	private static int apuesta = 0;
 	
 	
@@ -74,9 +75,9 @@ public class Cartera {
 	}
 	
 	/**
-	 * �puede apostar?
+	 * �puede apostar?.
 	 *
-	 * @param apuesta
+	 * @param apuesta the apuesta
 	 * @return true, si el jugador puede apostar
 	 */
 	public boolean puedeApostar(int apuesta) {
@@ -85,6 +86,9 @@ public class Cartera {
 		return true;
 	}
 	
+	/**
+	 * Ganador.
+	 */
 	public void ganador() {
 		addDinero(apuesta);
 		apuesta = 0;

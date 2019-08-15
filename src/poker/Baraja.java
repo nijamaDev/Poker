@@ -20,13 +20,18 @@ import java.util.Collections;
 
 import javax.swing.ImageIcon;
 
+// TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class Baraja. Crea una baraja de 52 cartas
  */
 public class Baraja {
 	
+	/** The baraja. */
 	private ArrayList<Carta> cartas, baraja;
 	
+	/**
+	 * Instantiates a new baraja.
+	 */
 	public Baraja() {
 		cartas = new ArrayList<Carta> (52);
         for (int type = 0; type < 4; type++) {
@@ -70,19 +75,28 @@ public class Baraja {
         }
         baraja = cartas;
 	}
+	
 	/**
-	 * Revuelve la baraja
+	 * Revuelve la baraja.
 	 */
 	public void revolver() {
 		Collections.shuffle(baraja);
 	}
 	
+	/**
+	 * Take card.
+	 *
+	 * @return the carta
+	 */
 	public Carta takeCard() {
 		Carta carta = baraja.get(0);
 		baraja.remove(0);
 		return carta;
 	}
 	
+	/**
+	 * Nueva baraja.
+	 */
 	public void nuevaBaraja() {
 		baraja = cartas;
 	}

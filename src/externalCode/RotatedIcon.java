@@ -13,7 +13,7 @@ import javax.swing.Icon;
 
 // TODO: Auto-generated Javadoc
 /**
- *  Code taken from: https://tips4java.wordpress.com/2009/04/06/rotated-icon/
+ *  The class Rotaded Icon. Code taken from: https://tips4java.wordpress.com/2009/04/06/rotated-icon/
  * 
  *  The RotatedIcon allows you to change the orientation of an Icon by
  *  rotating the Icon before it is painted. This class supports the following
