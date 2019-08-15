@@ -186,7 +186,7 @@ public class Ganador {
 		boolean straight5toAce = false;
 		if (valCartas[12] == 1 && contador == 4) { // valCartas[12] == 1 indica que hay un As
 			straight5toAce = true;           //el contador solo es 4 cuando hay un 2, 3, 4 y 5
-			for (int i = 0; i < indices.length; i++) { // reacomoda las cartas
+			for (int i = 0; i < indices.length-1; i++) { // reacomoda las cartas
 				indices[i][0] = indices[i+1][0];
 			}
 			indices[indices.length - 1][0] = 12;
